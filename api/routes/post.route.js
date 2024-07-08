@@ -1,6 +1,6 @@
 import express from 'express';
 import { createListing, deleteListing, updateListing, getListing, getListings } from '../controllers/post.controller.js';
-import { verifyToken } from '../middleware/verifyToken.js';
+import { verifyToken } from '../middleware/verifyUser.js';
 
 const router = express.Router();
 

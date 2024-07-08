@@ -40,8 +40,8 @@ export default function Header() {
             {/* SEARCHBAR */}
           <input
             type='text'
-            placeholder='Search Location...'
-            className=' focus:outline-none w-24 sm:w-64'
+            placeholder='Search Here...'
+            className=' focus:outline-none w-24 sm:w-64 '
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

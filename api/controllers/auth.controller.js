@@ -1,6 +1,6 @@
 import User from '../models/user.model.js';
 import bcryptjs from 'bcryptjs';
-import { errorHandler } from '../middleware/error.js';
+import { errorHandler } from '../middleware/error.js'
 import jwt from 'jsonwebtoken';
 
 export const register = async (req, res, next) => {
@@ -69,11 +69,11 @@ export const google = async (req, res, next) => {
   }
 };
 
-export const logout = async (req, res, next) => {
+export const logout = (req, res, next) => {
   try {
     res.clearCookie('access_token');
-    res.status(200).json('User has been logged out!');
+    res.status(200).json({ success: true, message: 'Logged out successfully' });
   } catch (error) {
-    next(error);
+    next(errorHandler(500, 'Logout failed'));
   }
 };

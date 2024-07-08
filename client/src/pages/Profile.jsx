@@ -14,11 +14,12 @@ import {
   deleteUserFailure,
   deleteUserStart,
   deleteUserSuccess,
-  signOutUserStart,
+  signOutUserStart, signOutUserSuccess, signOutUserFailure
 } from '../../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link ,useNavigate} from 'react-router-dom';
 export default function Profile() {
+  const navigate = useNavigate();
   const fileRef = useRef(null);
   const { currentUser, loading, error } = useSelector((state) => state.user);
   const [file, setFile] = useState(undefined);
@@ -47,24 +48,31 @@ export default function Profile() {
     const fileName = new Date().getTime() + file.name;
     const storageRef = ref(storage, fileName);
     const uploadTask = uploadBytesResumable(storageRef, file);
-
+  
     uploadTask.on(
       'state_changed',
       (snapshot) => {
-        const progress =
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setFilePerc(Math.round(progress));
       },
       (error) => {
+        console.error('Error uploading file:', error);
         setFileUploadError(true);
       },
       () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) =>
-          setFormData({ ...formData, avatar: downloadURL })
-        );
+        // Upload completed successfully
+        getDownloadURL(uploadTask.snapshot.ref)
+          .then((downloadURL) => {
+            setFormData({ ...formData, avatar: downloadURL });
+          })
+          .catch((error) => {
+            console.error('Error fetching download URL:', error);
+            setFileUploadError(true);
+          });
       }
     );
   };
+  
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value });
@@ -93,6 +101,7 @@ export default function Profile() {
       dispatch(updateUserFailure(error.message));
     }
   };
+  
 
   const handleDeleteUser = async () => {
     try {
@@ -111,20 +120,26 @@ export default function Profile() {
     }
   };
 
+
   const handleSignOut = async () => {
     try {
       dispatch(signOutUserStart());
-      const res = await fetch('/api/auth/signout');
+      const res = await fetch("/api/auth/logout", {
+        method: 'POST',
+      });
       const data = await res.json();
-      if (data.success === false) {
-        dispatch(deleteUserFailure(data.message));
+      if (!res.ok) {
+        dispatch(signOutUserFailure(data.message || 'Sign out failed'));
         return;
       }
-      dispatch(deleteUserSuccess(data));
+      dispatch(signOutUserSuccess());
+      navigate("/");
     } catch (error) {
-        dispatch(deleteUserFailure(data.message));
+      console.error('Error signing out:', error);
+      dispatch(signOutUserFailure(error.message));
     }
   };
+  
 
   const handleShowListings = async () => {
     try {

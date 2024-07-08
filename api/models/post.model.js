@@ -51,7 +51,9 @@ const listingSchema = new mongoose.Schema(
       required: true,
     },
     userRef: {
-      type: String,
+      type : mongoose.Schema.Types.ObjectId,
+      // type: String,
+      ref: 'User',
       required: true,
     },
   },
