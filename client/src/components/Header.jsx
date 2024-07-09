@@ -25,7 +25,7 @@ export default function Header() {
   }, [location.search]); 
   return ( 
     // bg-white-200
-    <header className=' shadow-md '>
+    <header className=' shadow-lg '>
         <div  className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
           <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>

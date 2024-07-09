@@ -230,12 +230,12 @@ export default function Profile() {
         />
         <button
           disabled={loading}
-          className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-slate-800 text-white rounded-lg p-3 uppercase hover:opacity-80 disabled:opacity-80'
         >
-          {loading ? 'Loading...' : 'Update'}
+          {loading ? 'Loading...' : 'Update Details'}
         </button>
         <Link
-          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
+          className='bg-green-800 text-white p-3 rounded-lg uppercase text-center hover:opacity-85'
           to={'/create-listing'}
         >
           Create Listing
@@ -244,11 +244,11 @@ export default function Profile() {
       <div className='flex justify-between mt-5'>
         <span
           onClick={handleDeleteUser}
-          className='text-red-700 cursor-pointer'
+          className='text-red-800 cursor-pointer hover:text-red-600 font-sm '
         >
           Delete account
         </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
+        <span onClick={handleSignOut} className='text-red-800 cursor-pointer hover:text-red-600 font-sm'>
           Sign out
         </span>
       </div>
@@ -257,7 +257,7 @@ export default function Profile() {
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
-      <button onClick={handleShowListings} className='text-green-700 w-full'>
+      <button onClick={handleShowListings} className='text-green-800 w-full hover:opacity-85'>
         Show Listings
       </button>
       <p className='text-red-700 mt-5'>
