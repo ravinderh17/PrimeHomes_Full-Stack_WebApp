@@ -10,6 +10,8 @@ import CreateListing from './pages/CreateListing';
 import UpdateListing from './pages/UpdateListing';
 import Listing from './pages/Listing';
 import Search from './pages/Search';
+import Rent from './components/Rent'
+import Sale from './components/Sale'
 
 export default function App() {
   return (
@@ -19,6 +21,8 @@ export default function App() {
         <Route path='/' element={<Home />} /> 
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/rent' element={<Rent />} />
+        <Route path='/sale' element={<Sale />} />
         <Route path='/about' element={<About />} />
          <Route path='/search' element={<Search />} />
         <Route path='/listing/:listingId' element={<Listing />} />
