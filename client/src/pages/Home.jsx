@@ -71,7 +71,7 @@ export default function Home() {
     </div>
   
   </div> 
-  <img src="../../public/comfort-triple-room2-1024x729.jpg" alt="" className='w-[95vh] h-[75vh] flex float-right pr-0 mr-0 md:mx-auto hidden lg:block' />
+  <img src="/images/bg.jpg" alt="" className='w-[95vh] h-[75vh] flex float-right pr-0 mr-0 md:mx-auto hidden lg:block' />
  
 
 </div>

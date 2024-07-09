@@ -9,7 +9,7 @@ export default function About() {
     <div className="">
       <section className="container mx-auto pt-3 flex pl-16">
         <figure className="pt-20 h-[400vh] w-[300vh] ">
-          <img src="../../public/about-banner-1.png" alt="House interior" className="w-full" />
+          <img src="/images/about (2).jpg" alt="House interior" className="w-full" />
         </figure>
 
         <div className=" ml-20 pt-32">
