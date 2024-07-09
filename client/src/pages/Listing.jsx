@@ -75,14 +75,14 @@ export default function Listing() {
               // }}
             >
               <img src= {url} alt="Listing"
-                      className='h-[70vh] w-[900px] object-fill '
+                      className=' h-[70vh] w-[900px] object-fill '
                />
             </div>
           </SwiperSlide>
         ))}
 
           </Swiper>
-          <div className='fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
+          <div className='mt-2 fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
             <FaShare
               className='text-slate-500'
               onClick={() => {
@@ -99,7 +99,7 @@ export default function Listing() {
               Link copied!
             </p>
           )}
-           <div className='fixed top-[13%] left-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
+           <div className='mt-2 fixed top-[13%] left-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
             <IoIosArrowBack
               className='text-slate-800'
               onClick={() => navigate(-1)}
