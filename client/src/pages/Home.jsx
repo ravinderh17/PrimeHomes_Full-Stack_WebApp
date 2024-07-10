@@ -5,6 +5,8 @@ import { Navigation } from 'swiper/modules';
 import SwiperCore from 'swiper';
 import 'swiper/css/bundle';
 import ListingItem from '../components/ListingItem';
+import bgImage from '../../public/bg.jpg'; // Adjust the path as necessary
+
 
 export default function Home() {
   const [offerListings, setOfferListings] = useState([]);
@@ -71,7 +73,7 @@ export default function Home() {
     </div>
   
   </div> 
-  <img src="../../public/bg.jpg" alt="" className='w-[95vh] h-[75vh] flex float-right pr-0 mr-0 md:mx-auto hidden lg:block' />
+  <img src={bgImage} alt="" className='w-[95vh] h-[75vh] flex float-right pr-0 mr-0 md:mx-auto hidden lg:block' />
  
 
 </div>

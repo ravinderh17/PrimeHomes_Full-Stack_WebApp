@@ -3,13 +3,15 @@ import { IoLeafOutline } from "react-icons/io5";
 import { IoTrophyOutline } from "react-icons/io5";
 import { GrSecure } from "react-icons/gr";
 import { Link } from "react-router-dom";
+import Aboutbg from "../../public/about (2).jpg"
+
 export default function About() {
 
   return (
     <div className="">
       <section className="container mx-auto pt-3 flex pl-16">
         <figure className="pt-20 h-[400vh] w-[300vh] ">
-          <img src="../../public/about (2).jpg" alt="House interior" className="w-full" />
+          <img src={Aboutbg} alt="House interior" className="w-full" />
         </figure>
 
         <div className=" ml-20 pt-32">
