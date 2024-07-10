@@ -200,6 +200,7 @@ export default function Search() {
               />
               <span>Parking</span>
             </div>
+            {/* AMENITIES - Furnished */}
             <div className='flex gap-2'>
               <input
                 type='checkbox'
@@ -211,6 +212,7 @@ export default function Search() {
               <span>Furnished</span>
             </div>
           </div>
+          {/* SORT THE SEARCH RESULTS */}
           <div className='flex items-center gap-2'>
             <label className='font-semibold'>Sort:</label>
             <select
@@ -225,11 +227,21 @@ export default function Search() {
               <option value='createdAt_asc'>Oldest</option>
             </select>
           </div>
+          {/* SUBMIT SEARCH FORM */}
           <button className='bg-slate-700 text-white p-3 rounded-3xl uppercase hover:opacity-90'>
             Search
           </button>
         </form>
       </div>
+
+      {/* DISPLAYING SEARCH RESULTS 
+          IF NO LISTING - NOT FOUND MSG
+          IF FETCHING - DISPLAY LOADING MSG INITIALLY
+          THEN MAP OVER THE LISTINGS NEEDED AND SHOW LISTINGS IN LISTINGCARD
+          IMPLEMENT PAGINATION - LIMIT SEARCH RESULTS TO (e.g. 9) 
+          SHOWMORE- TRIGGER SHOW-MORE FUNCTION
+      */}
+
       <div className='flex-1'>
         <h1 className='text-3xl font-semibold border-b pl-6 p-3 text-slate-800 mt-5'>
           Listing results:
