@@ -34,7 +34,8 @@
     "redux-persist": "^6.0.0",
     "sass": "^1.77.6",
     "styled-components": "^6.1.11",
-    "swiper": "^10.2.0"
+    "swiper": "^10.2.0",
+    "terser": "^5.31.2"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
