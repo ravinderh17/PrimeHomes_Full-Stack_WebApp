@@ -23,7 +23,7 @@ export default function Sale() {
             <div className=''>
               <h2 className='text-3xl font-semibold text-slate-700 text-center my-10'>Recent places for sale</h2>
                 </div>
-            <div className='flex flex-wrap gap-4'>
+            <div className='flex flex-wrap gap-4 lg:mx-48 px-auto'>
               {saleListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}

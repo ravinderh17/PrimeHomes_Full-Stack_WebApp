@@ -1,5 +1,5 @@
 {
-  "name": "estate",
+  "name": "client",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -12,8 +12,8 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.15.21",
-    "@mui/material": "^5.15.21",
+    "@mui/icons-material": "^5.16.1",
+    "@mui/material": "^5.16.1",
     "@reduxjs/toolkit": "^2.2.6",
     "@tanstack/react-query": "^5.49.2",
     "@types/redux-persist": "^4.3.1",
@@ -35,20 +35,21 @@
     "sass": "^1.77.6",
     "styled-components": "^6.1.11",
     "swiper": "^10.2.0",
-    "terser": "^5.31.2"
+    "terser": "^5.31.2",
+    "vite": "^5.3.3"
   },
   "devDependencies": {
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
+    "@vitejs/plugin-react-swc": "^3.3.2",
     "autoprefixer": "^10.4.19",
     "eslint": "^8.57.0",
     "eslint-plugin-react": "^7.34.2",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
     "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.4",
-    "vite": "^5.3.1"
+    "tailwindcss": "^3.4.4"
   }
 }

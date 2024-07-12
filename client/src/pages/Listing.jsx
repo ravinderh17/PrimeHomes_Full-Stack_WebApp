@@ -9,13 +9,11 @@ import {
   FaBath,
   FaBed,
   FaChair,
-  
   FaMapMarkerAlt,
-  FaParking,
-  FaShare,
+  FaParking
 } from 'react-icons/fa';
 import Contact from '../components/Contact';
-import { IoIosArrowBack } from "react-icons/io";
+import SubHeader from '../components/SubHeader';
 
 
 // https://sabe.io/blog/javascript-format-numbers-commas#:~:text=The%20best%20way%20to%20format,format%20the%20number%20with%20commas.
@@ -26,7 +24,6 @@ export default function Listing() {
   const [listing, setListing] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [copied, setCopied] = useState(false);
   const [contact, setContact] = useState(false);
   const params = useParams();
   const { currentUser } = useSelector((state) => state.user);
@@ -55,13 +52,14 @@ export default function Listing() {
 
   return (
     <main>
+      <SubHeader className=''/>
       {loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
       {error && (
         <p className='text-center my-7 text-2xl'>Something went wrong!</p>
       )}
       {listing && !loading && !error && (
         <div>
-          <Swiper navigation>
+          <Swiper navigation className='lg:mx-36'>
           {Array.isArray(listing.imageUrls) && listing.imageUrls.map((url) => (
           <SwiperSlide key={url}>
             <div
@@ -75,39 +73,16 @@ export default function Listing() {
               // }}
             >
               <img src= {url} alt="Listing"
-                      className=' h-[70vh] w-[900px] object-fill '
+                      className=' lg:h-[70vh] lg:w-[900px] lg:object-fill sm:w-[600px] sm:h-[50vh]'
                />
             </div>
           </SwiperSlide>
         ))}
 
           </Swiper>
-          <div className='mt-2 fixed top-[13%] right-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
-            <FaShare
-              className='text-slate-500'
-              onClick={() => {
-                navigator.clipboard.writeText(window.location.href);
-                setCopied(true);
-                setTimeout(() => {
-                  setCopied(false);
-                }, 2000);
-              }}
-            />
-          </div>
-          {copied && (
-            <p className='fixed top-[23%] right-[5%] z-10 rounded-md bg-slate-100 p-2'>
-              Link copied!
-            </p>
-          )}
-           <div className='mt-2 fixed top-[13%] left-[3%] z-10 border rounded-full w-12 h-12 flex justify-center items-center bg-slate-100 cursor-pointer'>
-            <IoIosArrowBack
-              className='text-slate-800'
-              onClick={() => navigate(-1)}
-              
-            />
-          </div>
+ 
           {/* < /> */}
-          <div className='flex flex-col max-w-4xl mx-auto p-3 my-7 gap-4'>
+          <div className='flex lg:mx-72 lg:px-4 flex-col max-w-5xl mx-auto lg:p-3 my-7 gap-4  sm:px-16 sm:mx-1'>
             <p className='text-2xl font-semibold'>
               {listing.name} - ${' '}
               {listing.offer
@@ -129,11 +104,11 @@ export default function Listing() {
                 </p>
               )}
             </div>
-            <p className='text-slate-800'>
-              <span className='font-semibold text-black'>Description - </span>
+            <p className='text-slate-800 text-justify'>
+              {/* <span className='font-semibold text-black'>Description - </span> */}
               {listing.description}
             </p>
-            <ul className='text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6'>
+            <ul className='text-green-900 font-semibold text-sm flex flex-wrap items-center gap-4 sm:gap-6 '>
               <li className='flex items-center gap-1 whitespace-nowrap '>
                 <FaBed className='text-lg' />
                 {listing.bedrooms > 1

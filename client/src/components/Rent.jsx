@@ -21,10 +21,10 @@ export default function Rent() {
     <div>
           {rentListings && rentListings.length > 0 && (
           <div className='flex flex-col items-center justify-center '>
-            <div className=''>
+          <div className=''>
               <h1 className='text-3xl font-semibold text-slate-700 text-center my-10'>Recent places for rent</h1>
             </div>
-            <div className='flex flex-wrap gap-4 '>
+            <div className='flex flex-wrap sm:gap-2 lg:gap-4 lg:mx-48 sm:mx-1 sm:mb-4 px-auto '>
               {rentListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}

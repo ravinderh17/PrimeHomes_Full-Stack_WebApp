@@ -8,7 +8,6 @@ import {
 import { app } from '../firebase';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import CreateIcon from '@mui/icons-material/Create';
 
 export default function CreateListing() {
   const { currentUser } = useSelector((state) => state.user);
@@ -164,8 +163,8 @@ export default function CreateListing() {
   };
   return (
     <main className="p-3 max-w-6xl mx-auto ">
-      <h1 className="text-xl text-slate-700 font-semibold text-justify my-7 flex items-center">
-        <CreateIcon className="mr-2" /> Create New Listing
+      <h1 className="text-xl text-slate-700 font-semibold text-justify my-7 flex items-center pl-1">
+        New Listing
       </h1>
       <form onSubmit={handleSubmit} className="flex lg:flex-row gap-10 sm:flex flex-col md:flex-col">
         <div className="flex flex-col flex-1 gap-4">
@@ -175,7 +174,7 @@ export default function CreateListing() {
             className="w-full p-3 rounded-3xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
             id="name"
             maxLength="82"
-            minLength="10"
+            minLength="5"
             required
             onChange={handleChange}
             value={formData.name}
@@ -231,7 +230,7 @@ export default function CreateListing() {
                 type="number"
                 id="regularPrice"
                 min="50"
-                max="10000000"
+                max="9000000000"
                 required
                 className="w-32 p-2 rounded-3xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
                 onChange={handleChange}
@@ -240,7 +239,7 @@ export default function CreateListing() {
               <div className="flex flex-col items-center">
                 <p>Regular price</p>
                 {formData.type === 'rent' && (
-                  <span className="text-xs">($ / month)</span>
+                  <span className="text-xs">(INR / month)</span>
                 )}
               </div>
             </div>
@@ -260,7 +259,7 @@ export default function CreateListing() {
                 <div className="flex flex-col items-center">
                   <p>Discounted price</p>
                   {formData.type === 'rent' && (
-                    <span className="text-xs">($ / month)</span>
+                    <span className="text-xs">(INR / month)</span>
                   )}
                 </div>
               </div>

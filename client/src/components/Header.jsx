@@ -24,8 +24,8 @@ export default function Header() {
     }
   }, [location.search]); 
   return ( 
-    // bg-white-200
-    <header className=' shadow-lg '>
+
+    <header className=' shadow-sm'>
         <div  className='flex justify-between items-center max-w-6xl mx-auto p-3'>
         <Link to='/'>
           <h1 className='font-bold text-sm sm:text-xl flex flex-wrap'>
@@ -35,52 +35,52 @@ export default function Header() {
         </Link>
         <form
           onSubmit={handleSubmit}
-          className= 'bg-white-500 border border-slate-300 p-3 rounded-3xl flex items-center hover:border-slate-400'
+          className= 'bg-white-500 border border-slate-300 px-3 py-2 my-auto rounded-3xl flex items-center hover:border-slate-400 '
         >
 
             {/* SEARCHBAR */}
           <input
             type='text'
             placeholder='Search Here...'
-            className=' focus:outline-none w-24 sm:w-64 '
+            className=' focus:outline-none lg:w-52 sm:w-28'
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
           <button>
-            <SearchIcon className='text-slate-600' />
+            <SearchIcon className='text-slate-500 ' />
           </button>
         </form>
 
-        <ul className='flex gap-6'>
+        <ul className='flex gap-2'>
           <Link to='/'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className='hidden sm:inline text-slate-700 hover:text-slate-500 hover:border border-y-slate-700 lg:p-4 sm:p-2 hover:border-t-0 hover:border-l-0 hover:border-r-0'>
               Home
             </li>
           </Link>
           <Link to='/rent'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className='hidden sm:inline text-slate-700 hover:text-slate-500 hover:border border-y-slate-700 lg:p-4 sm:p-2 hover:border-t-0 hover:border-l-0 hover:border-r-0'>
               Rent
             </li>
           </Link>
           <Link to='/sale'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className='hidden sm:inline text-slate-700 hover:text-slate-500 hover:border border-y-slate-700 lg:p-4 sm:p-2 hover:border-t-0 hover:border-l-0 hover:border-r-0'>
               Sale
             </li>
           </Link>
           <Link to='/about'>
-            <li className='hidden sm:inline text-slate-700 hover:underline'>
+            <li className='hidden sm:inline text-slate-700 hover:text-slate-500 hover:border border-y-slate-700 lg:p-4 sm:p-2 hover:border-t-0 hover:border-l-0 hover:border-r-0 '>
               About
             </li>
           </Link>
           <Link to='/profile'>
             {currentUser ? (
               <img
-                className='rounded-full h-7 w-7 object-cover'
+                className='rounded-full h-7 w-7 object-cover sm:mr-2 flex items-center justify-center'
                 src={currentUser.avatar}
                 alt='profile'
               />
             ) : (
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
+              <li className=' sm:inline text-slate-700 hover:text-slate-500 hover:border border-y-slate-700 lg:p-4 sm:p-2 hover:border-t-0 hover:border-l-0 hover:border-r-0 '> Sign in</li>
             )}
           </Link>
         </ul>
