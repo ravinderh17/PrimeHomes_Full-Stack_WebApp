@@ -129,7 +129,7 @@ export default function Search() {
   };
   return (
     <div className='flex flex-col md:flex-row '>
-      <div className='p-7  border-b-2 md:min-h-screen pl-48'>
+      <div className='p-7  border-b-2 md:min-h-screen pl-28'>
         <form onSubmit={handleSubmit} className='flex flex-col gap-4  max-w-64 pl-4 pr-4 border border-l-slate-100 border-r-slate-100 border-2 border-b-0 border-t-0'>
           <div className='flex items-center justify-center '>
             <input
@@ -239,7 +239,7 @@ export default function Search() {
         {/* <h1 className='text-xl font-semibold pl-7  text-slate-500 mt-8'>
           Listing results:
         </h1> */}
-        <div className='p-7 flex flex-wrap gap-8 '>
+        <div className='p-3 pt-6 flex flex-wrap gap-4 '>
           {!loading && listings.length === 0 && (
             <p className='text-xl text-slate-700'>No listing found!</p>
           )}

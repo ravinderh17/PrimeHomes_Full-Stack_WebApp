@@ -82,7 +82,7 @@ export default function Listing() {
           </Swiper>
  
           {/* < /> */}
-          <div className='flex lg:mx-72 lg:px-4 flex-col max-w-5xl mx-auto lg:p-3 my-7 gap-4  sm:px-16 sm:mx-1'>
+          <div className='flex lg:mx-56 lg:px-4 flex-col max-w-6xl mx-auto my-7 gap-4  sm:px-16 sm:mx-1'>
             <p className='text-2xl font-semibold'>
               {listing.name} - ${' '}
               {listing.offer

@@ -19,11 +19,11 @@ export default function Sale() {
   return (
     <div>
             {saleListings && saleListings.length > 0 && (
-          <div className='flex flex-col items-center justify-center '>
+          <div className='flex flex-col justify-center '>
             <div className=''>
-              <h2 className='text-3xl font-semibold text-slate-700 text-center my-10'>Recent places for sale</h2>
-                </div>
-            <div className='flex flex-wrap gap-4 lg:mx-48 px-auto'>
+              <h2 className='text-2xl font-semibold text-slate-600 mx-36 flex mt-10 mb-4'>Places for Sale</h2>
+              </div>
+            <div className='flex flex-wrap sm:gap-2 lg:gap-2 lg:mx-36 sm:mx-1 sm:mb-4 px-auto'>
               {saleListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}
