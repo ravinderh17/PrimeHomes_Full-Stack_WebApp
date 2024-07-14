@@ -50,9 +50,9 @@ Make sure you have the following installed on your system:
    ```sh
    npm install
 
-4.Install frontend dependencies:
-  ```sh 
-  npm install --prefix client
+4. Install frontend dependencies:
+   ```sh 
+   npm install --prefix client
 
 5. Run the application:
    ```sh
