@@ -61,10 +61,10 @@ Make sure you have the following installed on your system:
 ### Usage:
 
 1. **Search and Filter**: 
-- Use the search bar and filters to find properties based on your preferences.
+   - Use the search bar and filters to find properties based on your preferences.
 2. **User Authentication**: 
-- Sign up or log in to access your profile and listings.
+   - Sign up or log in to access your profile and listings.
 3. **Real-Time Messaging**: 
-- Communicate instantly with other users through the built-in messaging feature.
+   - Communicate instantly with other users through the built-in messaging feature.
 4. **Manage Listings**: 
-- Create, update, and delete property listings through your user profile.
+   - Create, update, and delete property listings through your user profile.
