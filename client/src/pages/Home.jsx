@@ -50,26 +50,28 @@ export default function Home() {
   return (
     <div className=''>
 
-      <div className='flex lg:flex-row  pt-16  max-w-7xl ml-28 mr-12 justify-between  md:mx-auto sm:mx-auto '>
+      <div className='flex flex-row pt-4 lg:pt-16  max-w-7xl sm:ml-28 lg:mr-12 ml-1 justify-between sm:flex-row md:mx-auto sm:mx-auto '>
 
   <div className='lg:pt-20 flex justify-between items-center md:mx-auto '>
     <div>
-      <h1 className='text-black-700 pl-6 font-bold lg:text-6xl sm:mx-auto md:mx-auto text-5xl'>
+      <h1 className=' text-black-700 pl-6 font-bold lg:text-6xl sm:mx-auto md:mx-auto text-2xl   md:text-4xl'>
         Discover your   <br /> <span className='text-slate-500 '>
         perfect </span>space.
       </h1>
-      <div className='text-black-700 text-xs sm:text-sm pt-7 pl-6 md:mx-auto'>
+      <div className=' text-black-700 text-xs sm:text-sm pt-7 pl-6 md:mx-auto'>
       Explore PrimeHomes, your ultimate destination <br />for finding the perfect place to live. 
        
       </div>
       
       <Link
-        to={'/search'}
-        className='text-xs sm:text-sm text-blue-800 font-bold hover:underline md:mx-auto'
-      >
-        <button className='p-4 pl-6 pr-6 ml-6 bg-black text-white rounded-3xl hover:opacity-80 mt-12 '>
-        Let&apos;s get started...</button> 
-      </Link>
+  to={'/search'}
+  className='text-xs sm:text-sm text-blue-800 lg:font-bold hover:underline md:mx-auto'
+>
+  <button className='flex justify-center p-3 sm:p-4 ml-5 sm:ml-6 sm:bg-black bg-slate-800 text-white rounded-3xl hover:opacity-80  mt-8 '>
+    Let&apos;s get started...
+  </button>
+</Link>
+
     </div>
   
   </div> 
@@ -88,10 +90,10 @@ export default function Home() {
               <div
                 style={{
                   background: `url(${listing.imageUrls[0]}) center no-repeat`,
-                  backgroundSize: 'contain',
+                  backgroundSize: 'cover',
                   
                 }}
-                className='h-[500px] mx-auto mt-20 flex justify-center items-center lg:hidden'
+                className='h-[300px] mx-auto mt-12 flex justify-center items-center lg:hidden'
                 key={listing._id}
               ></div>
               

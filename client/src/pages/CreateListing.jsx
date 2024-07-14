@@ -32,7 +32,6 @@ export default function CreateListing() {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  console.log(formData);
   const handleImageSubmit = () => {
     if (files.length > 0 && files.length + formData.imageUrls.length < 7) {
       setUploading(true);
@@ -127,18 +126,12 @@ export default function CreateListing() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      
       if (formData.imageUrls.length < 1)
         return setError('You must upload at least one image');
       if (+formData.regularPrice < +formData.discountPrice)
         return setError('Discount price must be lower than regular price');
       setLoading(true);
       setError(false);
-
-      console.log("Submitting data:", {
-        ...formData,
-        userRef: currentUser._id,
-      });
 
       const res = await fetch('/api/listing/create', {
         method: 'POST',
@@ -147,7 +140,7 @@ export default function CreateListing() {
         },
         body: JSON.stringify({
           ...formData,
-          userRef: currentUser._id, // Ensure this line is correct
+          userRef: currentUser._id,
         }),
       });
       const data = await res.json();
@@ -161,6 +154,12 @@ export default function CreateListing() {
       setLoading(false);
     }
   };
+
+  const handleFileChange = (e) => {
+    setFiles(e.target.files);
+    handleImageSubmit();
+  };
+
   return (
     <main className="p-3 max-w-6xl mx-auto ">
       <h1 className="text-xl text-slate-700 font-semibold text-justify my-7 flex items-center pl-1">
@@ -318,39 +317,24 @@ export default function CreateListing() {
               <span className="text-slate-700">Offer</span>
             </div>
           </div>
-          {/* <button
-            disabled={loading || uploading}
-            className="flex mt-5 w-100 items-center justify-center p-3 rounded-3xl border border-slate-500 text-black uppercase hover:bg-[#188641] hover:text-white disabled:opacity-80"
-          >
-            {loading ? 'Creating...' : 'Create listing'}
-          </button>
-          {error && <p className="text-red-700 text-sm">{error}</p>} */}
         </div>
-        
-        <div className="flex lg:flex-col flex-3 gap-4 sm:flex-col md:flex-col">
+
+        <div className="flex flex-3 gap-4  md:flex-col">
           <p className="font-semibold ">
             Images:
             <span className="font-normal text-gray-600 ml-2">
               The first image will be the cover (max 6)
             </span>
           </p>
-          <div className="flex gap-4 lg:flex-col sm:flex-col md:flex-col">
+          <div className="flex gap-4 flex-row">
             <input
-              onChange={(e) => setFiles(e.target.files)}
+              onChange={handleFileChange}
               className="p-3 border border-slate-300 rounded-xl"
               type="file"
               id="images"
               accept="image/*"
               multiple
             />
-            <button
-              type="button"
-              disabled={uploading}
-              onClick={handleImageSubmit}
-              className="p-3 rounded-3xl border border-slate-500 text-black uppercase hover:bg-slate-700 hover:text-white disabled:opacity-80"
-            >
-              {uploading ? 'Uploading...' : 'Upload'}
-            </button>
           </div>
           <p className="text-red-700 text-sm">
             {imageUploadError && imageUploadError}
@@ -377,7 +361,7 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className=" p-3 rounded-3xl border border-slate-500 text-black uppercase hover:bg-[#188641] hover:text-white disabled:opacity-80"
+            className=" p-3 rounded-xl border border-slate-500 text-black uppercase hover:bg-[#188641] hover:text-white disabled:opacity-80"
           >
             {loading ? 'Creating...' : 'Create listing'}
           </button>
