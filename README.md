@@ -58,7 +58,7 @@ Make sure you have the following installed on your system:
    ```sh
    npm run dev
 
-### Usage
+### Usage:
 
 - **Search and Filter**: Use the search bar and filters to find properties based on your preferences.
 - **User Authentication**: Sign up or log in to access your profile and listings.
