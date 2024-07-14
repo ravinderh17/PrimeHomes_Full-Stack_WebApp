@@ -44,20 +44,19 @@ Make sure you have the following installed on your system:
 
 2. Navigate to the project directory:
    ```sh
-cd primehomes
+   cd primehomes
 
 3. Install backend dependencies:
-
-```sh
-npm install
+   ```sh
+   npm install
 
 4.Install frontend dependencies:
    ```sh
    npm install --prefix client
 
 5. Run the application:
- ```sh
-npm run dev
+   ```sh
+   npm run dev
 
 ### Usage
 
