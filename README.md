@@ -51,8 +51,8 @@ Make sure you have the following installed on your system:
    npm install
 
 4.Install frontend dependencies:
-   ```sh
-   npm install --prefix client
+  ```sh 
+  npm install --prefix client
 
 5. Run the application:
    ```sh
