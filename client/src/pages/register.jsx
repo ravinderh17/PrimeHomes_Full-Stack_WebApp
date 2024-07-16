@@ -56,41 +56,42 @@ export default function Register() {
 
   return (
     <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl text-center font-semibold my-7'>Create Account</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
+      <h1 className='text-3xl text-slate-500 text-center font-semibold mt-7 font-sans'> Get Started</h1>
+      <span className="text-sm flex items-center justify-center mt-2 text-slate-500 mb-6">Enter credentials to create an account. </span>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-4 font-sans'>
         <input
           type='text'
-          placeholder='username'
+          placeholder='Enter Username'
           className='border p-3 rounded-lg'
           id='username'
           onChange={handleChange}
         />
         <input
           type='email'
-          placeholder='email'
+          placeholder='Enter Email'
           className='border p-3 rounded-lg'
           id='email'
           onChange={handleChange}
         />
         <input
           type='password'
-          placeholder='password'
+          placeholder='Enter Password'
           className='border p-3 rounded-lg'
           id='password'
           onChange={handleChange}
         />
         <button
           disabled={isLoading}
-          className='bg-slate-700 text-white p-3 rounded-lg hover:opacity-95 disabled:opacity-80'
+          className='text-white bg-gradient-to-r bg-green-700 hover:opacity-90 font-medium rounded-lg text-sm px-5 p-3 text-center flex w-full items-center justify-center uppercase font-sans'
         >
           {isLoading ? 'Loading...' : 'Register'}
         </button>
         <OAuth/>
       </form>
       <div className='flex gap-2 mt-5'>
-        <p>Have an account?</p>
+        <p className="font-sans">Have an account?</p>
         <Link to={'/login'}>
-          <span className='text-blue-700'>Sign in</span>
+          <span className='text-blue-700 font-sans text-base'>Sign in</span>
         </Link>
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}

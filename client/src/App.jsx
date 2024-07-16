@@ -13,6 +13,8 @@ import Search from './pages/Search';
 import Rent from './components/Rent'
 import Sale from './components/Sale'
 import MyListings from './pages/MyListings';
+import "./App.css";
+
 
 export default function App() {
   return (

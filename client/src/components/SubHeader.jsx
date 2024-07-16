@@ -15,7 +15,7 @@ export default function SubHeader() {
     <subheader className=' sticky w-full top-0 z-50'>
         <div  className='flex justify-between items-center max-w-6xl mx-auto p-3 bg-white'>
       <Link to = '/search' className='hover:text-slate-500'>
-          <span className='items-center gap-2 flex flex-wrap '>
+          <span className='items-center gap-2 flex flex-wrap font-sans'>
           <IoIosArrowBack /> 
          
           Back to Search
@@ -37,7 +37,7 @@ export default function SubHeader() {
             
           </div>
           {copied && (
-            <p className='fixed top-[23%] right-[6%] z-10 rounded-md bg-slate-100 p-2'>
+            <p className='fixed top-[23%] right-[6%] z-10 rounded-md bg-slate-100 p-2 font-sans'>
               Link copied!
             </p>
           )}
