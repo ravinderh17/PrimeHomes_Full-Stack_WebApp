@@ -1,8 +1,13 @@
-import ListingItem from '../components/ListingItem';
-import { useEffect, useState } from 'react';
+
+import { useEffect, useState,lazy, Suspense } from 'react';
+
+// Lazy load the ListingItem component
+const ListingItem = lazy(() => import('../components/ListingItem'));
+
 export default function Rent() {
 
     const [rentListings, setRentListings] = useState([]);
+
     useEffect(() => {
     const fetchRentListings = async () => {
         try {
@@ -25,9 +30,13 @@ export default function Rent() {
               <h1 className='text-2xl font-bold text-slate-600 font-sans mx-36 flex mt-16 mb-4 '>Newly Available Rentals</h1>
             </div>
             <div className='flex flex-wrap sm:gap-2 lg:gap-2 lg:mx-36 sm:mx-1 sm:mb-4 px-auto '>
-              {rentListings.map((listing) => (
-                <ListingItem listing={listing} key={listing._id} />
-              ))}
+              
+                   <Suspense fallback={<div>Loading...</div>}>
+                   {rentListings.map((listing) => (
+                       <ListingItem listing={listing} key={listing._id} />
+                   ))}
+               </Suspense>
+              
             </div>
           </div>
         )}

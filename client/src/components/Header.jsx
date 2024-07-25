@@ -25,8 +25,8 @@ export default function Header() {
   }, [location.search]); 
   
   return ( 
-    <header className='shadow-sm bg-black'>
-      <div className='flex justify-between items-center max-w-6xl mx-auto p-3 '>
+    <header className='sticky shadow-sm bg-black '>
+      <div className='sticky flex justify-between items-center max-w-6xl mx-auto p-3 '>
         <Link to='/'>
           <h1 className='font-bold lg:text-lg text-xs flex flex-wrap'>
             <span className='text-slate-500 font-sans'>Prime</span>
