@@ -5,9 +5,19 @@ import jwt from 'jsonwebtoken';
 
 export const register = async (req, res, next) => {
   const { username, email, password } = req.body;
-  const hashedPassword = bcryptjs.hashSync(password, 10);
-  const newUser = new User({ username, email, password: hashedPassword });
+
   try {
+    // Check if the email is already in use
+    const existingUser = await User.findOne({ email });
+    if (existingUser) {
+      return next(errorHandler(400, 'Email already in Use !'));
+    }
+
+    // Hash the password
+    const hashedPassword = bcryptjs.hashSync(password, 10);
+    
+    // Create a new user
+    const newUser = new User({ username, email, password: hashedPassword });
     await newUser.save();
     res.status(201).json('User created successfully!');
   } catch (error) {

@@ -26,51 +26,54 @@ export default function Header() {
   
   return ( 
     <header className='sticky shadow-sm bg-black '>
-      <div className='sticky flex justify-between items-center max-w-6xl mx-auto p-3 '>
+      <div className='lg:mx-32 md:mx-8 sm:mx-3 flex justify-between items-center max-w-6xl my-auto p-3 relative '>
         <Link to='/'>
-          <h1 className='font-bold lg:text-lg text-xs flex flex-wrap'>
-            <span className='text-slate-500 font-sans'>Prime</span>
-            <span className='text-slate-400 font-sans'>Homes</span>
+          <h1 className='font-semibold  relative my-auto text-md flex flex-wrap items-center'>
+            <span className='text-slate-400 font-sans mr-3'>PrimeEstate</span>
           </h1>
         </Link>
          <form
           onSubmit={handleSubmit}
-          className='bg-white-500 border border-slate-300 px-2 py-1 lg:px-3 lg:py-2 my-auto rounded-xl flex items-center hover:border-slate-400 hover:border-1 font-sans'
+          className= 'flex'
         >
-          {/* SEARCHBAR */}
+          {/* SEARCHBAR  rounded-r-full pr-3*/}
+          <div className='flex '>
          <input 
-            type='text'
+            type='search'
             placeholder='Search Here...'
-            className='flex focus:outline-none lg:w-52 w-28 bg-black'
+            className='flex  py-1.5 px-6 bg-transparent border-2 border-r-0 border-slate-600 rounded-l-full focus:outline-none lg:w-52 w-36 text-wrap  flex-wrap text-slate-300 text-sm '
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button>
-            <SearchIcon className='text-slate-500 font-sans' />
+          <button className='p-1.5 pr-3 border border-l-0 border-2 border-slate-600 rounded-r-full'>
+            <SearchIcon className='text-slate-500 font-sans hover:opacity-90' />
           </button>
+          </div>
         </form> 
 
-        <ul className='flex lg:gap-4 gap-2'>
+        <ul className='flex lg:gap-4 gap-2 
+        items-center 
+        '>
           <Link to='/'>
-            <li className='hidden sm:inline text-slate-300 hover:text-slate-400 hover:border-b-2 border-slate-400 lg:p-4 sm:p-2 lg:text-md font-sans'>
+            <li className='hidden sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-2 font-sans '>
               Home
             </li>
           </Link>
           <Link to='/rent'>
-            <li className='hidden sm:inline text-slate-300 hover:text-slate-400 hover:border-b-2 border-slate-400 lg:p-4 sm:p-2 font-sans'>
+            <li className='hidden sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-2 font-sans'>
               Rent
             </li>
           </Link>
           <Link to='/sale'>
-            <li className='hidden sm:inline text-slate-300 hover:text-slate-400 hover:border-b-2 border-slate-400 lg:p-4 sm:p-2 font-sans'>
+            <li className='hidden sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-2 font-sans'>
               Sale
             </li>
           </Link>
-          <Link to='/about'>
-            <li className='hidden sm:inline text-slate-300 hover:text-slate-400 hover:border-b-2 border-slate-400 lg:p-4 sm:p-2 font-sans'>
+          {/* <Link to='/about'>
+            <li className='hidden sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-2 font-sans'>
               About
             </li>
-          </Link>
+          </Link> */}
           <Link to='/profile'>
             {currentUser ? (
               <img
@@ -79,9 +82,9 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <li className='sm:inline text-slate-300 hover:text-slate-400 hover:border-b-2 border-slate-400 lg:p-4 sm:p-2 font-sans  '>
+              <button className=' sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-1 font-sans text-wrap'>
                 Sign in
-              </li>
+              </button>
             )}
           </Link>
         </ul>

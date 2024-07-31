@@ -108,7 +108,7 @@ export default function MyListings() {
         )}
         <div className="flex px-auto mx-auto my-3">
           <Link
-            className='flex px-auto ml-0 justify-center mx-auto border border-2 border border-t-0 border-l-0 border-r-0 hover:border-b-slate-700 text-black font-medium p-3 uppercase text-center hover:opacity-95'
+            className='flex px-auto ml-0 justify-center mx-auto border border-2 border-t-0 border-l-0 border-r-0 hover:border-b-slate-700 text-black font-medium p-3 uppercase text-center hover:opacity-95'
             to={'/create-listing'}
           >
             Create New Listing

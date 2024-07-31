@@ -161,7 +161,7 @@ export default function CreateListing() {
   };
 
   return (
-    <main className="p-3 max-w-6xl mx-auto ">
+    <main className="p-3 max-w-5xl mx-auto ">
       <h1 className="text-xl text-slate-700 font-semibold text-justify my-7 flex items-center pl-1">
         New Listing
       </h1>
@@ -170,7 +170,7 @@ export default function CreateListing() {
           <input
             type="text"
             placeholder="Property Title"
-            className="w-full p-3 rounded-3xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
+            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
             id="name"
             maxLength="82"
             minLength="5"
@@ -181,7 +181,7 @@ export default function CreateListing() {
           <textarea
             type="text"
             placeholder="Add Description"
-            className="w-full p-3 rounded-3xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
+            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
             id="description"
             required
             onChange={handleChange}
@@ -190,7 +190,7 @@ export default function CreateListing() {
           <input
             type="text"
             placeholder="Address"
-            className="w-full p-3 rounded-3xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
+            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
             id="address"
             required
             onChange={handleChange}
@@ -205,7 +205,7 @@ export default function CreateListing() {
                 min="1"
                 max="10"
                 required
-                className="w-20 p-2 rounded-3xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
+                className="w-20 p-2 rounded-xl border items-center border-gray-300 mb-2 hover:border-blue-500 outline-none"
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
@@ -218,7 +218,7 @@ export default function CreateListing() {
                 min="1"
                 max="10"
                 required
-                className="w-20 p-2 rounded-3xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
+                className="w-20 p-2 rounded-xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
@@ -231,7 +231,7 @@ export default function CreateListing() {
                 min="50"
                 max="9000000000"
                 required
-                className="w-32 p-2 rounded-3xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
+                className="w-32 p-2 rounded-xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
@@ -319,7 +319,7 @@ export default function CreateListing() {
           </div>
         </div>
 
-        <div className="flex flex-3 gap-4  md:flex-col">
+        <div className="flex flex-col flex-3 gap-4">
           <p className="font-semibold ">
             Images:
             <span className="font-normal text-gray-600 ml-2">

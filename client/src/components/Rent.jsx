@@ -25,11 +25,23 @@ export default function Rent() {
   return (
     <div>
           {rentListings && rentListings.length > 0 && (
-          <div className='flex flex-col justify-center '>
+          <div className='flex flex-col items-center justify-center mt-4 '>
           <div className=''>
-              <h1 className='text-2xl font-bold text-slate-600 font-sans mx-36 flex mt-16 mb-4 '>Newly Available Rentals</h1>
+          <h2 className='relative text-3xl font-semibold mx-auto text-black mt-6 mb-12'>
+                <span className='relative inline-block'>
+                  <span className='border-b-8 border-slate-600 pb-1 '>
+                    Available R
+                  </span>
+                  <span className='absolute bottom-0 left-0 right-0 h-1 ' />
+                </span>
+                <span className='relative inline-block'>
+                  <span className='text-black'>
+                    entals
+                  </span>
+                </span>
+              </h2>
             </div>
-            <div className='flex flex-wrap sm:gap-2 lg:gap-2 lg:mx-36 sm:mx-1 sm:mb-4 px-auto '>
+            <div className='flex flex-wrap sm:gap-2 lg:gap-2 lg:mx-24 sm:mx-1 sm:mb-4 px-auto '>
               
                    <Suspense fallback={<div>Loading...</div>}>
                    {rentListings.map((listing) => (

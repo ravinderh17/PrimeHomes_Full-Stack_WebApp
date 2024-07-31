@@ -57,35 +57,41 @@ export default function Login() {
   };
 
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl text-center font-semibold text-slate-500 mt-7 mb-6'>Welcome back</h1>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4 font-sans'>
+    <div className='p-3 max-w-md mx-auto'>
+      <h1 className='text-3xl  font-semibold text-slate-800 mt-7 '>Log In </h1>
+      <span className="text-md flex  mt-2 text-slate-600 mb-6">Hi! Welcome back. </span>
+      
+      <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
+      <OAuth/>
+      <span className="text-md text-center items-center justify-center flex text-slate-400 mt-2">or login with email </span>
+        <label htmlFor="" className='flex font-semibold'>Email</label>
         <input
           type='email'
           placeholder='Enter Email'
-          className='border p-3 rounded-lg font-sans'
+          className='border border-slate-200 focus:outline-blue-500 mb-2 p-3 rounded-lg '
           id='email'
           onChange={handleChange}
         />
+         <label htmlFor="" className='flex font-semibold'>Password</label>
         <input
           type='assword'
           placeholder='Enter Password'
-          className='border p-3 rounded-lg'
+          className='border focus:outline-blue-500  p-3 rounded-lg'
           id='password'
           onChange={handleChange}
         />
         <button
           disabled={loading}
-          className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-80 font-medium text-md font-sans'
+          className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-70 font-medium text-md '
         >
-          {loading ? 'Loading...' : 'Sign In'}
+          {loading ? 'Loading...' : 'login'}
         </button>
-        <OAuth/>
+      
       </form>
-      <div className='flex gap-2 mt-5'>
-        <p className='font-sans'>Dont have an account?</p>
+      <div className='flex text-center items-center justify-center gap-2 mt-5'>
+        <p className=''>Not registered yet?</p>
         <Link to={'/register'}>
-          <span className='text-blue-700 font-sans'>Sign up</span>
+          <span className='text-blue-700 text-center flex items-center justify-center'>Create an account</span>
         </Link>
       </div>
       {error && <p className='text-red-500 mt-5'>{error}</p>}

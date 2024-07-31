@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Register from './pages/register';
 import Login from './pages/login';
-import About from './pages/About';
+// import About from './pages/About';
 import Profile from './pages/Profile';
 import Header from './components/Header';
 import PrivateRoute from './components/PrivateRoute';
@@ -26,7 +26,7 @@ export default function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/rent' element={<Rent />} />
         <Route path='/sale' element={<Sale />} />
-        <Route path='/about' element={<About />} />
+        {/* <Route path='/about' element={<About />} /> */}
          <Route path='/search' element={<Search />} />
         <Route path='/listing/:listingId' element={<Listing />} />
 

@@ -1,0 +1,36 @@
+@media (max-width: 740px) { 
+.result{
+    display: flex;
+    gap: 1px;
+    margin-left: 85px;
+    margin-right: 85px;
+}
+
+.searchform{
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.type{
+    display: flex;
+    flex-direction: row;
+}
+
+.parking{
+    margin-left: 10px;
+}
+.rent{
+    margin-left: 48px;
+}
+.sale{
+    margin-left: 22px;
+}
+.offer{
+    margin-left: 22px;
+}
+.sort{
+    margin-left: 48px;
+}
+
+}

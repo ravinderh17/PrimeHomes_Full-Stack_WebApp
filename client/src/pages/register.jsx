@@ -55,40 +55,43 @@ export default function Register() {
   };
 
   return (
-    <div className='p-3 max-w-lg mx-auto'>
-      <h1 className='text-3xl text-slate-500 text-center font-semibold mt-7 font-sans'> Get Started</h1>
-      <span className="text-sm flex items-center justify-center mt-2 text-slate-500 mb-6">Enter credentials to create an account. </span>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-4 font-sans'>
+    <div className='p-3 max-w-md mx-auto '>
+      <h1 className='text-3xl text-slate-800 flex font-semibold mt-4'> Register</h1>
+      <span className="text-md flex mt-1 text-slate-400 mb-3">Enter credentials to create an account. </span>
+      <form onSubmit={handleSubmit} className='flex flex-col gap-2 '>
+      <label htmlFor="" className='flex font-semibold '>Username</label>
         <input
           type='text'
           placeholder='Enter Username'
-          className='border p-3 rounded-lg'
+          className='border focus:outline-blue-500 p-3 rounded-lg '
           id='username'
           onChange={handleChange}
         />
+          <label htmlFor="" className='flex font-semibold'>Email</label>
         <input
           type='email'
           placeholder='Enter Email'
-          className='border p-3 rounded-lg'
+          className='border focus:outline-blue-500 p-3 rounded-lg '
           id='email'
           onChange={handleChange}
         />
+          <label htmlFor="" className='flex font-semibold'>Password</label>
         <input
           type='password'
           placeholder='Enter Password'
-          className='border p-3 rounded-lg'
+          className='border focus:outline-blue-500 p-3 rounded-lg '
           id='password'
           onChange={handleChange}
         />
         <button
           disabled={isLoading}
-          className='text-white bg-gradient-to-r bg-green-700 hover:opacity-90 font-medium rounded-lg text-sm px-5 p-3 text-center flex w-full items-center justify-center uppercase font-sans'
+          className='text-white bg-gradient-to-r bg-slate-700 hover:opacity-90 font-medium rounded-lg text-sm px-5 p-3 text-center flex w-full items-center justify-center uppercase font-sans'
         >
           {isLoading ? 'Loading...' : 'Register'}
         </button>
         <OAuth/>
       </form>
-      <div className='flex gap-2 mt-5'>
+      <div className='flex gap-2 mt-2 text-center items-center justify-center'>
         <p className="font-sans">Have an account?</p>
         <Link to={'/login'}>
           <span className='text-blue-700 font-sans text-base'>Sign in</span>

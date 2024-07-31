@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
+import '../components/css-file/Search.css'
+
 
 export default function Search() {
   const navigate = useNavigate();
@@ -129,21 +131,25 @@ export default function Search() {
   };
   return (
     <div className='flex flex-col md:flex-row '>
-      <div className='p-7  border-b-2 md:min-h-screen pl-28'>
-        <form onSubmit={handleSubmit} className='flex flex-col gap-4  max-w-64 pl-4 pr-4 border border-l-slate-100 border-r-slate-100 border-2 border-b-0 border-t-0'>
+      <div className='p-7  border-b-2 md:min-h-screen lg:pl-28'>
+        <form onSubmit={handleSubmit} className='
+        searchform
+        flex flex-col gap-4  lg:max-w-64 pl-4 lg:pr-4 border border-l-slate-100 border-r-slate-100 border-2 border-b-0 border-t-0'>
           <div className='flex items-center justify-center '>
             <input
               type='text'
               id='searchTerm'
               placeholder='Search Keywords...'
-              className='border rounded-3xl p-2.5 pl-6 w-full'
+              className='border rounded-lg p-2.5 mr-4 pl-6 w-full'
               value={sidebardata.searchTerm}
               onChange={handleChange}
             />
           </div>
-          <div className='flex gap-2 flex-wrap flex-col'>
+          <div className='
+          type
+          flex gap-2 flex-wrap md:flex-col lg:flex-col'>
             <label className='font-semibold'>Type:</label>
-            <div className='flex gap-2'>
+            <div className='rent flex gap-2'>
               <input
                 type='checkbox'
                 id='rent'
@@ -153,7 +159,7 @@ export default function Search() {
               />
               <span>Rent</span>
             </div>
-            <div className='flex gap-2'>
+            <div className='sale flex gap-2'>
               <input
                 type='checkbox'
                 id='sale'
@@ -163,7 +169,8 @@ export default function Search() {
               />
               <span>Sale</span>
             </div>
-            <div className='flex gap-2'>
+            <div className='
+            offer flex gap-2'>
               <input
                 type='checkbox'
                 id='offer'
@@ -184,9 +191,9 @@ export default function Search() {
               <span>Rent & Sale</span>
             </div>
           </div>
-          <div className='flex flex-col gap-2 flex-wrap '>
-            <label className='font-semibold'>Amenities:</label>
-            <div className='flex gap-2'>
+          <div className='flex md:flex-col lg:flex-col gap-2 flex-wrap '>
+            <label className='font-semibold '>Amenities:</label>
+            <div className='parking flex gap-2 '>
               <input
                 type='checkbox'
                 id='parking'
@@ -207,13 +214,15 @@ export default function Search() {
               <span>Furnished</span>
             </div>
           </div>
-          <div className='flex flex-col gap-2'>
-            <label className='font-semibold'>Sort:</label>
+          <div className='flex md:flex-col lg:flex-col gap-2'>
+            <label className='font-semibold flex items-center justify-center'>Sort:</label>
             <select
               onChange={handleChange}
               defaultValue={'created_at_desc'}
               id='sort_order'
-              className='border rounded-lg p-1.5 px-auto  cursor-pointer outline-none'
+              className='border rounded-lg p-1.5 px-auto  cursor-pointer outline-none
+              sort
+              '
             >
               <option value='regularPrice_desc'>Price high to low</option>
               <option value='regularPrice_asc'>Price low to hight</option>
@@ -235,7 +244,7 @@ export default function Search() {
           SHOWMORE- TRIGGER SHOW-MORE FUNCTION
       */}
 
-      <div className='flex-1 pt-2'>
+      <div className='result flex-1 pt-2'>
         {/* <h1 className='text-xl font-semibold pl-7  text-slate-500 mt-8'>
           Listing results:
         </h1> */}
