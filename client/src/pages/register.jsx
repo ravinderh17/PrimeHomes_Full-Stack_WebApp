@@ -66,7 +66,8 @@ export default function Register() {
             type='text'
             id='username'
             placeholder='Enter Username'
-            className='border border-slate-300 p-3 rounded-lg mt-1 w-full'
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full
+            hover:bg-slate-100 hover:border-slate-100 '
             onChange={handleChange}
           />
         </div>
@@ -76,7 +77,8 @@ export default function Register() {
             type='email'
             id='email'
             placeholder='Enter Email'
-            className='border border-slate-300 p-3 rounded-lg mt-1 w-full'
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full
+            hover:bg-slate-100 hover:border-slate-100 '
             onChange={handleChange}
           />
         </div>
@@ -86,7 +88,8 @@ export default function Register() {
             type='password'
             id='password'
             placeholder='Enter Password'
-            className='border border-slate-300 p-3 rounded-lg mt-1 w-full'
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full
+            hover:bg-slate-100 hover:border-slate-100 '
             onChange={handleChange}
           />
         </div>

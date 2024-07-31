@@ -48,7 +48,7 @@ export default function OAuth() {
       onClick={handleGoogleClick}
       type='button'
       className=' uppercase 
-    text-black justify-center bg-[white] border border-slate-300 hover:opacity-80 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 p-3 w-full mt-0 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 font-sans'
+    text-black justify-center bg-[white] border border-slate-300 focus:outline-none hover:bg-slate-100 hover:border-slate-100 rounded-lg text-sm px-5 p-3 w-full mt-0 text-center inline-flex items-center  font-sans'
     >
       <svg className='w-4 h-4 me-2' xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="18" height="18" viewBox="0 0 48 48">
         <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
