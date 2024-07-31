@@ -13,7 +13,7 @@ export default function SubHeader() {
   return ( 
     // bg-white-200
     <subheader className=' sticky w-full top-0 z-50 bg-slate-300'>
-        <div  className='flex justify-between items-center max-w-6xl mx-36 p-3 '>
+        <div  className='flex justify-between items-center max-w-6xl lg:mx-36 p-3 '>
       <Link to = '/search' className='hover:text-slate-500'>
           <span className='items-center gap-2 flex flex-wrap '>
           <IoIosArrowBack /> 

@@ -63,7 +63,7 @@ export default function Listing() {
           {Array.isArray(listing.imageUrls) && listing.imageUrls.map((url) => (
           <SwiperSlide key={url}>
             <div
-              className='flex items-center justify-center mx-auto'
+              className='flex items-center justify-center mx-4 lg:mx-auto'
 
               // style={{ h-[60vh] w-[900px] 
               //   background: `url(${url}) center no-repeat`, display: `flex`,
@@ -82,7 +82,7 @@ export default function Listing() {
           </Swiper>
  
           {/* < /> */}
-          <div className='flex lg:mx-56 lg:px-4 flex-col max-w-6xl mx-auto my-7 gap-4  sm:px-16 sm:mx-1'>
+          <div className='flex lg:mx-56 lg:px-4 flex-col max-w-6xl mx-auto my-7 gap-4  px-16 sm:mx-1 '>
             <p className='text-2xl font-semibold'>
               {listing.name} - ${' '}
               {listing.offer

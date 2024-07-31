@@ -27,12 +27,12 @@ export default function ListingItem({ listing }) {
           mt-2
           ">
             <Suspense fallback={<div className="h-4 w-4"></div>}>
-              <MdLocationOn className="h-4 w-4 text-green-500" />
+              <MdLocationOn className="h-4 w-4 text-green-500 text-xs" />
             </Suspense>
-            <p className="text-sm truncate">{listing.address}</p>
+            <p className="text-xs truncate">{listing.address}</p>
           </div>
           <div className=''>
-          <p className="mt-6 flex justify-between mx-1 text-sm">
+          <p className="mt-6 flex justify-between mx-1 text-xs">
           <span className='uppercase text-slate-200'>
               price
             </span>

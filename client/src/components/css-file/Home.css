@@ -66,6 +66,29 @@
   }
 } */
 
+/* Custom styles for the previous arrow */
+/* .slick-prev {
+  color: white; /* Change this to your desired color */
+  /* You can also use other CSS properties to customize the appearance */
+  /* Example background color */
+ /* background-color: rgb(33, 60, 83);
+  padding: 3px;
+  border-radius: 30px;
+} */
+
+/* Custom styles for the next arrow */
+.slick-next {
+  color: blue; /* Change this to your desired color */
+  /* You can also use other CSS properties to customize the appearance */
+ /* Example background color */
+}
+
+/* Optional: Adjust hover states */
+.slick-prev:hover,
+.slick-next:hover {
+  color: orange; /* Change this to your hover color */
+}
+
   @media (max-width: 640px) { 
     .list{
       margin: 8px;
