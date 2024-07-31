@@ -1,17 +1,3 @@
-
-  /* .image-container {
-    width: 30rem;
-    height: 35rem;
-    overflow: hidden;
-    border-radius: 15rem 15rem 0 0;
-    border: 8px solid rgba(255, 255, 255, 0.12);
-  }
-  .image-container > img{
-      width: 100%;
-      height: 100%;
-  } */
-
-  /* General slider styles */
 .slick-slide {
   padding: 0 8px; /* Padding on each side of a slide */
 }
@@ -54,33 +40,11 @@
   z-index: 1; /* Ensure navigation arrows are above the slides */
 }
 
-/* @media (min-widtth: 740px) and (max-width: 1024px) { 
-  .list{
-    margin-left: 10px;
-  }
-}
 
-@media (max-width:1524px) {
-  .list{
-    margin-left: 40px;
-  }
-} */
-
-/* Custom styles for the previous arrow */
-/* .slick-prev {
-  color: white; /* Change this to your desired color */
-  /* You can also use other CSS properties to customize the appearance */
-  /* Example background color */
- /* background-color: rgb(33, 60, 83);
-  padding: 3px;
-  border-radius: 30px;
-} */
 
 /* Custom styles for the next arrow */
 .slick-next {
-  color: blue; /* Change this to your desired color */
-  /* You can also use other CSS properties to customize the appearance */
- /* Example background color */
+  color: blue; 
 }
 
 /* Optional: Adjust hover states */

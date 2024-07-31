@@ -59,11 +59,11 @@ export default function Login() {
     <div className='p-4 max-w-md mx-10 lg:mx-auto
     mt-6
     '>
-      <h1 className='text-3xl font-bold text-slate-800 text-center'>Log In</h1>
-      <p className="text-md text-slate-600 text-center mb-6 mt-1">Welcome back! Please login to your account.</p>
+      <h1 className='text-3xl font-semibold text-slate-800'>Log In</h1>
+      <p className="text-sm text-slate-600 mb-6 mt-1">Welcome back! Please enter credentials.</p>
       
       <OAuth />
-      <span className="text-md text-center text-slate-500 mt-4 mb-4
+      <span className="text-sm text-center text-slate-500 mt-4 mb-4
       flex justify-center
       
       ">or login with your email</span>
@@ -101,9 +101,9 @@ export default function Login() {
         </button>
       </form>
       
-      <div className='flex justify-center mt-4'>
-        <p className="text-slate-600">Don&apos;t have an account?</p>
-        <Link to={'/register'} className='text-blue-700 ml-1'>Create an account</Link>
+      <div className='flex mt-4'>
+        <p className="text-slate-600 text-sm">Don&apos;t have an account?</p>
+        <Link to={'/register'} className='text-blue-700 ml-1 text-sm'>Create an account</Link>
       </div>
       
       {error && <p className='text-red-500 mt-4'>{error}</p>}

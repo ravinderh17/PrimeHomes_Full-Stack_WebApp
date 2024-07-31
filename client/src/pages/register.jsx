@@ -55,13 +55,13 @@ export default function Register() {
 
   return (
     <div className='p-4 max-w-md mx-10 lg:mx-auto mt-6'>
-      <h1 className='text-3xl font-bold text-slate-800 text-center'>Register</h1>
-      <p className="text-md text-slate-600 text-center mb-6 mt-1">Create an account to get started.</p>
+      <h1 className='text-3xl font-semibold text-slate-800 '>Register</h1>
+      <p className="text-sm text-slate-600 mb-6 mt-1">Create an account to get started.</p>
       
       
       <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
         <div>
-          <label htmlFor="username" className='font-semibold'>Username</label>
+          <label htmlFor="username" className='font-semibold '>Username</label>
           <input
             type='text'
             id='username'
@@ -100,9 +100,9 @@ export default function Register() {
           {isLoading ? 'Loading...' : 'Register'}
         </button>
       </form>
-      <div className='flex justify-center mt-4'>
-        <p className="text-slate-600">Already have an account?</p>
-        <Link to={'/login'} className='text-blue-700 ml-1'>Sign in</Link>
+      <div className='flex  mt-4'>
+        <p className="text-slate-600 text-sm">Already have an account?</p>
+        <Link to={'/login'} className='text-blue-700 ml-1 text-sm'>Sign in</Link>
       </div>
       
       {error && <p className='text-red-500 mt-4'>{error}</p>}
