@@ -58,13 +58,13 @@ export default function Login() {
 
   return (
     <div className='p-3 max-w-md mx-auto'>
-      <h1 className='text-3xl text-center font-semibold text-slate-800 mt-7 '>Log In </h1>
+      <h1 className='text-3xl text-center lg:font-semibold text-slate-800 mt-7 '>Log In </h1>
       <span className="text-md flex justify-center text-center  mt-2 text-slate-600 mb-6">Hi! Welcome back. </span>
       
       <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
       <OAuth/>
       <span className="text-md text-center items-center justify-center flex text-slate-400 mt-2">or login with email </span>
-        <label htmlFor="" className='flex font-semibold'>Email</label>
+        <label htmlFor="" className='flex lg:font-semibold'>Email</label>
         <input
           type='email'
           placeholder='Enter Email'
@@ -72,7 +72,7 @@ export default function Login() {
           id='email'
           onChange={handleChange}
         />
-         <label htmlFor="" className='flex font-semibold'>Password</label>
+         <label htmlFor="" className='flex lg:font-semibold'>Password</label>
         <input
           type='assword'
           placeholder='Enter Password'

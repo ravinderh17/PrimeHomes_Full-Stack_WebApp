@@ -56,10 +56,10 @@ export default function Register() {
 
   return (
     <div className='p-3 max-w-md mx-auto '>
-      <h1 className='text-3xl text-slate-800 flex font-semibold mt-4'> Register</h1>
-      <span className="text-md flex mt-1 text-slate-400 mb-3">Enter credentials to create an account. </span>
+      <h1 className='text-3xl  text-slate-800 flex justify-center text-center lg:font-semibold mt-4'> Register</h1>
+      <span className="text-md justify-center flex mt-1 text-slate-400 mb-3">Enter credentials to create an account. </span>
       <form onSubmit={handleSubmit} className='flex flex-col gap-2 '>
-      <label htmlFor="" className='flex font-semibold '>Username</label>
+      <label htmlFor="" className='flex lg:font-semibold '>Username</label>
         <input
           type='text'
           placeholder='Enter Username'
@@ -67,7 +67,7 @@ export default function Register() {
           id='username'
           onChange={handleChange}
         />
-          <label htmlFor="" className='flex font-semibold'>Email</label>
+          <label htmlFor="" className='flex lg:font-semibold'>Email</label>
         <input
           type='email'
           placeholder='Enter Email'
@@ -75,7 +75,7 @@ export default function Register() {
           id='email'
           onChange={handleChange}
         />
-          <label htmlFor="" className='flex font-semibold'>Password</label>
+          <label htmlFor="" className='flex lg:font-semibold'>Password</label>
         <input
           type='password'
           placeholder='Enter Password'
