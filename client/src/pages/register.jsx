@@ -54,7 +54,7 @@ export default function Register() {
   };
 
   return (
-    <div className='p-4 max-w-md mx-14 lg:mx-auto'>
+    <div className='p-4 max-w-md mx-10 lg:mx-auto mt-6'>
       <h1 className='text-3xl font-bold text-slate-800 text-center'>Register</h1>
       <p className="text-md text-slate-600 text-center mb-6 mt-1">Create an account to get started.</p>
       
