@@ -56,7 +56,7 @@ export default function Register() {
 
   return (
     <div className='p-3 max-w-md mx-auto '>
-      <h1 className='text-3xl  text-slate-800 flex justify-center text-center lg:font-semibold mt-4'> Register</h1>
+      <h1 className='text-3xl  text-slate-800 flex justify-center text-center font-semibold mt-4'> Register</h1>
       <span className="text-md justify-center flex mt-1 text-slate-400 mb-3">Enter credentials to create an account. </span>
       <form onSubmit={handleSubmit} className='flex flex-col gap-2 '>
       <label htmlFor="" className='flex lg:font-semibold '>Username</label>

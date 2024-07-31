@@ -58,7 +58,7 @@ export default function Login() {
 
   return (
     <div className='p-3 max-w-md mx-auto'>
-      <h1 className='text-3xl text-center lg:font-semibold text-slate-800 mt-7 '>Log In </h1>
+      <h1 className='text-3xl text-center font-semibold text-slate-800 mt-7 '>Log In </h1>
       <span className="text-md flex justify-center text-center  mt-2 text-slate-600 mb-6">Hi! Welcome back. </span>
       
       <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
