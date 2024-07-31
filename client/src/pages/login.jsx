@@ -56,7 +56,7 @@ export default function Login() {
   };
 
   return (
-    <div className='p-4 max-w-md mx-auto'>
+    <div className='p-4 max-w-md mx-14 lg:mx-auto'>
       <h1 className='text-3xl font-bold text-slate-800 text-center'>Log In</h1>
       <p className="text-md text-slate-600 text-center mb-6 mt-1">Welcome back! Please login to your account.</p>
       
