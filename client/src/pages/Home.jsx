@@ -60,7 +60,7 @@ export default function Home() {
       {
       breakpoint: 780, // For medium screens (tablets and small desktops)
       settings: {
-        slidesToShow: 3, // Show 3 slides at a time
+        slidesToShow: 2, // Show 3 slides at a time
         slidesToScroll: 1, // Scroll 1 slide at a time
       }
     },
@@ -118,11 +118,11 @@ export default function Home() {
             <div className='my-3 flex items-center justify-start'>
               <h2 className='relative text-3xl font-semibold mx-auto text-black mt-10 mb-6 flex items-center'>
                 <span className='relative inline-block'>
-                  <span className='border-b-8 border-slate-600 pb-1'>Available R</span>
+                  <span className='border-b-8 border-slate-600 pb-1'>Rental P</span>
                   <span className='absolute bottom-0 left-0 right-0 h-1' />
                 </span>
                 <span className='relative inline-block'>
-                  <span className='text-black'>entals</span>
+                  <span className='text-black'>laces</span>
                 </span>
                 <Link className='text-xl ml-2 mt-1 text-slate-600 flex items-center' to='/search?type=rent'>
                   <IoIosArrowForward />
@@ -151,15 +151,15 @@ export default function Home() {
             <div className='my-3 flex text-center'>
               <h2 className='relative text-3xl font-semibold mx-auto text-black mt-10 mb-8 flex items-center'>
                 <span className='relative inline-block'>
-                  <span className='border-b-8 border-slate-600 pb-1'>Residentials F</span>
+                  <span className='border-b-8 border-slate-600 pb-1'>On S</span>
                   <span className='absolute bottom-0 left-0 right-0 h-1' />
                 </span>
                 <span className='relative inline-block'>
-                  <span className='text-black'>or Sale</span>
+                  <span className='text-black'>ale</span>
                 </span>
                 <Link className='text-xl ml-2 mt-1 text-slate-600 flex items-center' to='/search?type=sale'>
                   <IoIosArrowForward
-                    className='hover:text-black bg-white hover:bg-slate-500 hover:bg-opacity-20 rounded-full p-3'
+                    className=''
                   />
                 </Link>
               </h2>
