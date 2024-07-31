@@ -44,8 +44,7 @@ export default function Login() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      console.log(data);
-      if (data.success === false) {
+      if (!data.success) {
         dispatch(signInFailure(data.message));
         return;
       }
@@ -57,44 +56,51 @@ export default function Login() {
   };
 
   return (
-    <div className='p-3 max-w-md mx-auto'>
-      <h1 className='text-3xl text-center font-semibold text-slate-800 mt-7 '>Log In </h1>
-      <span className="text-md flex justify-center text-center  mt-2 text-slate-600 mb-6">Hi! Welcome back. </span>
+    <div className='p-4 max-w-md mx-auto'>
+      <h1 className='text-3xl font-bold text-slate-800 text-center'>Log In</h1>
+      <p className="text-md text-slate-600 text-center mb-6 mt-1">Welcome back! Please login to your account.</p>
       
-      <form onSubmit={handleSubmit} className='flex flex-col gap-2'>
-      <OAuth/>
-      <span className="text-md text-center items-center justify-center flex text-slate-400 mt-2">or login with email </span>
-        <label htmlFor="" className='flex lg:font-semibold'>Email</label>
-        <input
-          type='email'
-          placeholder='Enter Email'
-          className='border border-slate-200 focus:outline-blue-500 mb-2 p-3 rounded-lg '
-          id='email'
-          onChange={handleChange}
-        />
-         <label htmlFor="" className='flex lg:font-semibold'>Password</label>
-        <input
-          type='assword'
-          placeholder='Enter Password'
-          className='border focus:outline-blue-500  p-3 rounded-lg'
-          id='password'
-          onChange={handleChange}
-        />
+      <OAuth />
+      <span className="text-md text-center text-slate-500 mt-4 mb-4
+      flex justify-center
+      
+      ">or login with your email</span>
+      
+      <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
+        <div>
+          <label htmlFor="email" className='font-semibold'>Email</label>
+          <input
+            type='email'
+            id='email'
+            placeholder='Enter Email'
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full'
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password" className='font-semibold'>Password</label>
+          <input
+            type='password'
+            id='password'
+            placeholder='Enter Password'
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full'
+            onChange={handleChange}
+          />
+        </div>
         <button
           disabled={loading}
-          className='bg-slate-700 text-white p-3 rounded-lg uppercase hover:opacity-95 disabled:opacity-70 font-medium text-md '
+          className='bg-blue-800 text-white py-3 rounded-lg uppercase font-semibold text-center w-full hover:opacity-90 disabled:opacity-50'
         >
-          {loading ? 'Loading...' : 'login'}
+          {loading ? 'Loading...' : 'Login'}
         </button>
-      
       </form>
-      <div className='flex text-center items-center justify-center gap-2 mt-5'>
-        <p className=''>Not registered yet?</p>
-        <Link to={'/register'}>
-          <span className='text-blue-700 text-center flex items-center justify-center'>Create an account</span>
-        </Link>
+      
+      <div className='flex justify-center mt-4'>
+        <p className="text-slate-600">Don&apos;t have an account?</p>
+        <Link to={'/register'} className='text-blue-700 ml-1'>Create an account</Link>
       </div>
-      {error && <p className='text-red-500 mt-5'>{error}</p>}
+      
+      {error && <p className='text-red-500 mt-4'>{error}</p>}
     </div>
   );
 }

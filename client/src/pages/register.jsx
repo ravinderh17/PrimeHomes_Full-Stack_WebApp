@@ -1,4 +1,4 @@
-import { useState } from "react"; 
+import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import OAuth from '../components/OAuth';
 
@@ -39,8 +39,7 @@ export default function Register() {
         body: JSON.stringify(formData),
       });
       const data = await res.json();
-      console.log(data);
-      if (data.success === false) {
+      if (!data.success) {
         setIsLoading(false);
         setError(data.message);
         return;
@@ -55,49 +54,55 @@ export default function Register() {
   };
 
   return (
-    <div className='p-3 max-w-md mx-auto '>
-      <h1 className='text-3xl  text-slate-800 flex justify-center text-center font-semibold mt-4'> Register</h1>
-      <span className="text-md justify-center flex mt-1 text-slate-400 mb-3">Enter credentials to create an account. </span>
-      <form onSubmit={handleSubmit} className='flex flex-col gap-2 '>
-      <label htmlFor="" className='flex lg:font-semibold '>Username</label>
-        <input
-          type='text'
-          placeholder='Enter Username'
-          className='border focus:outline-blue-500 p-3 rounded-lg '
-          id='username'
-          onChange={handleChange}
-        />
-          <label htmlFor="" className='flex lg:font-semibold'>Email</label>
-        <input
-          type='email'
-          placeholder='Enter Email'
-          className='border focus:outline-blue-500 p-3 rounded-lg '
-          id='email'
-          onChange={handleChange}
-        />
-          <label htmlFor="" className='flex lg:font-semibold'>Password</label>
-        <input
-          type='password'
-          placeholder='Enter Password'
-          className='border focus:outline-blue-500 p-3 rounded-lg '
-          id='password'
-          onChange={handleChange}
-        />
+    <div className='p-4 max-w-md mx-auto'>
+      <h1 className='text-3xl font-bold text-slate-800 text-center'>Register</h1>
+      <p className="text-md text-slate-600 text-center mb-6 mt-1">Create an account to get started.</p>
+      
+      
+      <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
+        <div>
+          <label htmlFor="username" className='font-semibold'>Username</label>
+          <input
+            type='text'
+            id='username'
+            placeholder='Enter Username'
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full'
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="email" className='font-semibold'>Email</label>
+          <input
+            type='email'
+            id='email'
+            placeholder='Enter Email'
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full'
+            onChange={handleChange}
+          />
+        </div>
+        <div>
+          <label htmlFor="password" className='font-semibold'>Password</label>
+          <input
+            type='password'
+            id='password'
+            placeholder='Enter Password'
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full'
+            onChange={handleChange}
+          />
+        </div>
         <button
           disabled={isLoading}
-          className='text-white bg-gradient-to-r bg-slate-700 hover:opacity-90 font-medium rounded-lg text-sm px-5 p-3 text-center flex w-full items-center justify-center uppercase font-sans'
+          className='bg-blue-700 text-white py-3 rounded-lg uppercase font-semibold text-center w-full hover:opacity-90 disabled:opacity-50'
         >
           {isLoading ? 'Loading...' : 'Register'}
         </button>
-        <OAuth/>
       </form>
-      <div className='flex gap-2 mt-2 text-center items-center justify-center'>
-        <p className="font-sans">Have an account?</p>
-        <Link to={'/login'}>
-          <span className='text-blue-700 font-sans text-base'>Sign in</span>
-        </Link>
+      <div className='flex justify-center mt-4'>
+        <p className="text-slate-600">Already have an account?</p>
+        <Link to={'/login'} className='text-blue-700 ml-1'>Sign in</Link>
       </div>
-      {error && <p className='text-red-500 mt-5'>{error}</p>}
+      
+      {error && <p className='text-red-500 mt-4'>{error}</p>}
     </div>
   );
 }
