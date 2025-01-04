@@ -54,9 +54,9 @@ export default function Register() {
   };
 
   return (
-    <div className='p-4 max-w-md mx-10 lg:mx-auto mt-6'>
-      <h1 className='text-3xl font-semibold text-slate-800 '>Register</h1>
-      <p className="text-sm text-slate-600 mb-6 mt-1">Create an account to get started.</p>
+    <div className='p-4 text-slate-200 max-w-md mx-10 lg:mx-auto mt-6'>
+      <h1 className='text-3xl font-semibold '>Register</h1>
+      <p className="text-sm  mb-6 mt-1">Create an account to get started.</p>
       
       
       <form onSubmit={handleSubmit} className='flex flex-col space-y-4'>
@@ -67,7 +67,8 @@ export default function Register() {
             id='username'
             placeholder='Enter Username'
             className='border border-slate-300 p-3 rounded-lg mt-1 w-full
-            hover:bg-slate-100 hover:border-slate-100 '
+            font-semibold text-black
+            hover:bg-slate-200  hover:border-slate-100 '
             onChange={handleChange}
           />
         </div>
@@ -78,7 +79,8 @@ export default function Register() {
             id='email'
             placeholder='Enter Email'
             className='border border-slate-300 p-3 rounded-lg mt-1 w-full
-            hover:bg-slate-100 hover:border-slate-100 '
+            font-semibold text-black
+            hover:bg-slate-200  hover:border-slate-100 '
             onChange={handleChange}
           />
         </div>
@@ -89,7 +91,8 @@ export default function Register() {
             id='password'
             placeholder='Enter Password'
             className='border border-slate-300 p-3 rounded-lg mt-1 w-full
-            hover:bg-slate-100 hover:border-slate-100 '
+            font-semibold text-black
+            hover:bg-slate-200  hover:border-slate-100 '
             onChange={handleChange}
           />
         </div>
@@ -101,8 +104,8 @@ export default function Register() {
         </button>
       </form>
       <div className='flex  mt-4'>
-        <p className="text-slate-600 text-sm">Already have an account?</p>
-        <Link to={'/login'} className='text-blue-700 ml-1 text-sm'>Sign in</Link>
+        <p className=" text-sm">Already have an account?</p>
+        <Link to={'/login'} className='text-blue-200 ml-1 text-sm'>Sign in</Link>
       </div>
       
       {error && <p className='text-red-500 mt-4'>{error}</p>}

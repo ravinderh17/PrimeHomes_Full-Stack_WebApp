@@ -57,13 +57,13 @@ export default function Login() {
 
   return (
     <div className='p-4 max-w-md mx-10 lg:mx-auto
-    mt-6
+    mt-6 text-slate-100
     '>
-      <h1 className='text-3xl font-semibold text-slate-800'>Log In</h1>
-      <p className="text-sm text-slate-600 mb-6 mt-1">Welcome back! Please enter credentials.</p>
+      <h1 className='text-3xl font-semibold '>Log In</h1>
+      <p className="text-sm mb-6 mt-1">Welcome back! Please enter credentials.</p>
       
       <OAuth />
-      <span className="text-sm text-center text-slate-500 mt-4 mb-4
+      <span className="text-sm text-center mt-4 mb-4
       flex justify-center
       
       ">or login with your email</span>
@@ -75,8 +75,8 @@ export default function Login() {
             type='email'
             id='email'
             placeholder='Enter Email'
-            className='border border-slate-300 p-3 rounded-lg mt-1 w-full
-            hover:bg-slate-100 hover:border-slate-100 
+            className='border border-slate-300 p-3 rounded-lg mt-1 w-full font-semibold text-black
+            hover:bg-slate-200 hover:border-slate-100 
             '
             onChange={handleChange}
           />
@@ -88,22 +88,23 @@ export default function Login() {
             id='password'
             placeholder='Enter Password'
             className='border border-slate-300 p-3 rounded-lg mt-1 w-full
-            hover:bg-slate-100 hover:border-slate-100 
+            font-semibold text-black
+            hover:bg-slate-200  hover:border-slate-100 
             '
             onChange={handleChange}
           />
         </div>
         <button
           disabled={loading}
-          className='bg-blue-800 text-white py-3 rounded-lg uppercase font-semibold text-center w-full hover:opacity-90 disabled:opacity-50'
+          className='bg-blue-800 text-white py-3 rounded-lg uppercase font-semibold text-center w-full hover:opacity-50 disabled:opacity-50'
         >
           {loading ? 'Loading...' : 'Login'}
         </button>
       </form>
       
       <div className='flex mt-4'>
-        <p className="text-slate-600 text-sm">Don&apos;t have an account?</p>
-        <Link to={'/register'} className='text-blue-700 ml-1 text-sm'>Create an account</Link>
+        <p className=" text-sm">Don&apos;t have an account?</p>
+        <Link to={'/register'} className='hover:text-blue-300 ml-1 text-sm'>Create an account</Link>
       </div>
       
       {error && <p className='text-red-500 mt-4'>{error}</p>}

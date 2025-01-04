@@ -25,28 +25,29 @@ export default function Header() {
   }, [location.search]); 
   
   return ( 
-    <header className='sticky shadow-sm bg-black '>
-      <div className='lg:mx-32 md:mx-8 sm:mx-3 flex justify-between items-center max-w-6xl my-auto p-3 relative '>
+    <header className='sticky top-0 z-50 inset-x-0 shadow-sm text-white bg-[#121d1c]'>
+       <div className='flex justify-between items-center w-full max-w-7xl mx-auto p-3 relative '>
         <Link to='/'>
           <h1 className='font-semibold  relative my-auto text-md flex flex-wrap items-center'>
-            <span className='text-slate-400 font-sans mr-3'>PrimeEstate</span>
+            <span className=' font-sans mr-3'>PrimeEstate</span>
           </h1>
         </Link>
          <form
           onSubmit={handleSubmit}
           className= 'flex'
         >
-          {/* SEARCHBAR  rounded-r-full pr-3*/}
-          <div className='flex '>
+          {/* SEARCHBAR */}
+          <div className='flex text-white'>
          <input 
             type='search'
             placeholder='Search Here...'
-            className='flex  py-1.5 px-6 bg-transparent border-2 border-r-0 border-slate-600 rounded-l-full focus:outline-none lg:w-52 w-36 text-wrap  flex-wrap text-slate-300 text-sm '
+            className='flex font-semibold 
+             py-1.5 px-6 bg-transparent border-2 border-r-0 text-slate-100 rounded-l-full focus:outline-none lg:w-52 w-36 text-wrap  flex-wrap text-sm '
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <button className='p-1.5 pr-3 border border-l-0 border-2 border-slate-600 rounded-r-full'>
-            <SearchIcon className='text-slate-500 font-sans hover:opacity-90' />
+          <button className='p-1.5 pr-3 border border-l-0 border-2 text-slate-100 rounded-r-full'>
+            <SearchIcon className=' font-sans hover:opacity-90 text-slate-100' />
           </button>
           </div>
         </form> 
@@ -55,17 +56,17 @@ export default function Header() {
         items-center 
         '>
           <Link to='/'>
-            <li className='hidden sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-2 font-sans '>
+            <li className='hidden sm:inline  hover:opacity-85 lg:p-4 sm:p-2 font-sans '>
               Home
             </li>
           </Link>
           <Link to='/rent'>
-            <li className='hidden sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-2 font-sans'>
+            <li className='hidden sm:inline  hover:opacity-85 lg:p-4 sm:p-2 font-sans'>
               Rent
             </li>
           </Link>
           <Link to='/sale'>
-            <li className='hidden sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-2 font-sans'>
+            <li className='hidden sm:inline  hover:opacity-85 lg:p-4 sm:p-2 font-sans'>
               Sale
             </li>
           </Link>
@@ -82,7 +83,7 @@ export default function Header() {
                 alt='profile'
               />
             ) : (
-              <button className=' sm:inline text-slate-300 hover:opacity-85 lg:p-4 sm:p-1 font-sans text-wrap'>
+              <button className=' sm:inline hover:opacity-85 lg:p-4 sm:p-1 font-sans text-wrap'>
                 Sign in
               </button>
             )}

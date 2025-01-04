@@ -161,8 +161,8 @@ export default function CreateListing() {
   };
 
   return (
-    <main className="p-3 max-w-5xl mx-auto ">
-      <h1 className="text-xl text-slate-700 font-semibold text-justify my-7 flex items-center pl-1">
+    <main className="p-3 max-w-5xl mx-auto text-slate-200 ">
+      <h1 className="text-xl  font-semibold text-justify my-7 flex items-center pl-1">
         New Listing
       </h1>
       <form onSubmit={handleSubmit} className="flex lg:flex-row gap-10 sm:flex flex-col md:flex-col">
@@ -170,7 +170,8 @@ export default function CreateListing() {
           <input
             type="text"
             placeholder="Property Title"
-            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
+            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400 font-semibold text-black
+            hover:bg-slate-200 transition-all duration-300 "
             id="name"
             maxLength="82"
             minLength="5"
@@ -181,7 +182,8 @@ export default function CreateListing() {
           <textarea
             type="text"
             placeholder="Add Description"
-            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
+            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400 font-semibold text-black
+            hover:bg-slate-200 "
             id="description"
             required
             onChange={handleChange}
@@ -190,7 +192,8 @@ export default function CreateListing() {
           <input
             type="text"
             placeholder="Address"
-            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400"
+            className="w-full p-3 rounded-xl border border-gray-200 mb-2 outline-none hover:border-slate-400 font-semibold text-black
+            hover:bg-slate-200 transition-all duration-300 "
             id="address"
             required
             onChange={handleChange}
@@ -205,11 +208,12 @@ export default function CreateListing() {
                 min="1"
                 max="10"
                 required
-                className="w-20 p-2 rounded-xl border items-center border-gray-300 mb-2 hover:border-blue-500 outline-none"
+                className="w-20 p-2 rounded-xl border items-center border-gray-300 font-semibold text-black
+            hover:bg-slate-200 transition-all duration-300  mb-2 hover:border-blue-500 outline-none"
                 onChange={handleChange}
                 value={formData.bedrooms}
               />
-              <p className="text-slate-700">Beds</p>
+              <p >Beds</p>
             </div>
             <div className="flex items-center gap-2">
               <input
@@ -218,11 +222,12 @@ export default function CreateListing() {
                 min="1"
                 max="10"
                 required
-                className="w-20 p-2 rounded-xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
+                className="w-20 p-2 rounded-xl border border-gray-300 mb-2 font-semibold text-black
+            hover:bg-slate-200  hover:border-blue-500 outline-none"
                 onChange={handleChange}
                 value={formData.bathrooms}
               />
-              <p className="text-slate-700">Baths</p>
+              <p className="">Baths</p>
             </div>
             <div className="flex items-center gap-2">
               <input
@@ -231,7 +236,8 @@ export default function CreateListing() {
                 min="50"
                 max="9000000000"
                 required
-                className="w-32 p-2 rounded-xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
+                className="w-32 p-2 rounded-xl border border-gray-300 mb-2 font-semibold text-black
+            hover:bg-slate-200  hover:border-blue-500 outline-none"
                 onChange={handleChange}
                 value={formData.regularPrice}
               />
@@ -251,7 +257,8 @@ export default function CreateListing() {
                   min="0"
                   max="10000000"
                   required
-                  className="w-32 p-2 rounded-3xl border border-gray-300 mb-2 hover:border-blue-500 outline-none"
+                  className="w-32 p-2 rounded-3xl border border-gray-300 font-semibold text-black
+            hover:bg-slate-200  mb-2 hover:border-blue-500 outline-none"
                   onChange={handleChange}
                   value={formData.discountPrice}
                 />
@@ -274,7 +281,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.type === 'sale'}
               />
-              <span className="text-slate-700">Sell</span>
+              <span className="">Sell</span>
             </div>
             <div className="flex gap-2 items-center">
               <input
@@ -284,7 +291,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.type === 'rent'}
               />
-              <span className="text-slate-700">Rent</span>
+              <span className="">Rent</span>
             </div>
             <div className="flex gap-2 items-center">
               <input
@@ -294,7 +301,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.parking}
               />
-              <span className="text-slate-700">Parking spot</span>
+              <span className="">Parking spot</span>
             </div>
             <div className="flex gap-2 items-center">
               <input
@@ -304,7 +311,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.furnished}
               />
-              <span className="text-slate-700">Furnished</span>
+              <span className="">Furnished</span>
             </div>
             <div className="flex gap-2 items-center">
               <input
@@ -314,7 +321,7 @@ export default function CreateListing() {
                 onChange={handleChange}
                 checked={formData.offer}
               />
-              <span className="text-slate-700">Offer</span>
+              <span className="">Offer</span>
             </div>
           </div>
         </div>
@@ -322,7 +329,7 @@ export default function CreateListing() {
         <div className="flex flex-col flex-3 gap-4">
           <p className="font-semibold ">
             Images:
-            <span className="font-normal text-gray-600 ml-2">
+            <span className="font-normal  ml-2">
               The first image will be the cover (max 6)
             </span>
           </p>
@@ -336,7 +343,7 @@ export default function CreateListing() {
               multiple
             />
           </div>
-          <p className="text-red-700 text-sm">
+          <p className="text-red-700 font-semibold text-sm">
             {imageUploadError && imageUploadError}
           </p>
           {formData.imageUrls.length > 0 &&
@@ -353,7 +360,8 @@ export default function CreateListing() {
                 <button
                   type="button"
                   onClick={() => handleRemoveImage(index)}
-                  className="p-3 text-red-700 rounded-lg uppercase hover:opacity-75"
+                  className="p-3 text-red-700  font-semibold
+            hover:bg-slate-200 rounded-lg uppercase hover:opacity-75 transition-all duration-300 "
                 >
                   Delete
                 </button>
@@ -361,7 +369,8 @@ export default function CreateListing() {
             ))}
           <button
             disabled={loading || uploading}
-            className=" p-3 rounded-xl border border-slate-500 text-black uppercase hover:bg-[#188641] hover:text-white disabled:opacity-80"
+            className=" p-3 rounded-xl border border-slate-500 font-semibold text-slate-200 transition-all duration-300 
+             uppercase hover:bg-[#188641] disabled:opacity-80"
           >
             {loading ? 'Creating...' : 'Create listing'}
           </button>

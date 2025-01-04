@@ -142,7 +142,7 @@ export default function Profile() {
       <ProfileHeader className=''/>
       {/* <h1 className=
       'text-2xl font-semibold px-48 my-6'>Account Settings</h1> */}
-    <div className='p-3 max-w-lg mx-auto'>
+    <div className='p-3 max-w-lg mx-auto text-slate-200'>
 
       <form onSubmit={handleSubmit} className='flex flex-col gap-2 py-6'>
         <input
@@ -176,7 +176,8 @@ export default function Profile() {
           placeholder='username'
           defaultValue={currentUser.username}
           id='username'
-          className='border p-3 rounded-lg'
+          className='font-semibold text-black
+            hover:bg-slate-200  border p-3 rounded-lg'
           onChange={handleChange}
         />
         <input
@@ -184,7 +185,8 @@ export default function Profile() {
           placeholder='email'
           id='email'
           defaultValue={currentUser.email}
-          className='border p-3 rounded-lg'
+          className='font-semibold text-black
+            hover:bg-slate-200  border p-3 rounded-lg'
           onChange={handleChange}
         />
         <input
@@ -192,11 +194,13 @@ export default function Profile() {
           placeholder='Password'
           onChange={handleChange}
           id='password'
-          className='border p-3 rounded-lg'
+          className='font-semibold text-black
+            hover:bg-slate-200  border p-3 rounded-lg'
         />
         <button
           disabled={loading}
-          className='text-white bg-slate-700 hover:opacity-90 rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2'
+          className='text-white bg-slate-800 hover:opacity-50 rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 w-full font-semibold
+            '
         >
           {loading ? 'Loading...' : 'UPDATE'}
         </button>
@@ -205,11 +209,11 @@ export default function Profile() {
       <div className='flex justify-between mt-5'>
         <span
           onClick={handleDeleteUser}
-          className='text-red-800 cursor-pointer hover:text-red-600 font-sm '
+          className='text-red-400 cursor-pointer hover:text-red-200 font-sm font-semibold'
         >
           Delete account
         </span>
-        <span onClick={handleSignOut} className='text-red-800 cursor-pointer hover:text-red-600 font-sm'>
+        <span onClick={handleSignOut} className='text-red-400 cursor-pointer hover:text-red-200 font-sm font-semibold'>
           Sign out
         </span>
       </div>

@@ -2,22 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-
+:root{
+  background-color: #121d1c;
+}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Lato", sans-serif;
+    font-family: "Poppins", serif;
+    font-weight: 100;
+    font-style: normal;
     scroll-behavior: smooth;
   }
 
-:root{
-  background-color: rgba(255, 255, 255, 0.767);
-}
-*{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}  
 .primaryText {
     color: #1f3e72;
     font-weight: bold;

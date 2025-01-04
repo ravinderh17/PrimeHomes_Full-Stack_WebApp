@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ListingItem from '../components/ListingItem';
 import '../components/css-file/Search.css'
-
+import Footer from '../components/Footer';
 
 export default function Search() {
   const navigate = useNavigate();
@@ -130,8 +130,8 @@ export default function Search() {
     setListings([...listings, ...data]);
   };
   return (
-    <div className='flex flex-col md:flex-row '>
-      <div className='p-7  border-b-2 md:min-h-screen lg:pl-28'>
+    <div className='flex flex-col md:flex-row my-2 mx-auto items-center justify-between gap-2 max-w-7xl'>
+      <div className='p-7 pt-0 border-b-2 md:min-h-screen  flex-3 mt-0 text-slate-100  mx-auto my-auto'>
         <form onSubmit={handleSubmit} className='
         searchform
         flex flex-col gap-4  lg:max-w-64 pl-4 lg:pr-4 border border-l-slate-100 border-r-slate-100 border-2 border-b-0 border-t-0'>
@@ -140,7 +140,7 @@ export default function Search() {
               type='text'
               id='searchTerm'
               placeholder='Search Keywords...'
-              className='border rounded-lg p-2.5 mr-4 pl-6 w-full'
+              className='border rounded-lg p-2.5 mr-4 pl-6 w-full bg-transparent'
               value={sidebardata.searchTerm}
               onChange={handleChange}
             />
@@ -215,19 +215,25 @@ export default function Search() {
             </div>
           </div>
           <div className='flex md:flex-col lg:flex-col gap-2'>
-            <label className='font-semibold flex items-center justify-center'>Sort:</label>
+            <label className='font-semibold flex items-center justify-center '>Sort:</label>
             <select
               onChange={handleChange}
               defaultValue={'created_at_desc'}
               id='sort_order'
               className='border rounded-lg p-1.5 px-auto  cursor-pointer outline-none
-              sort
+              sort bg-transparent
               '
             >
-              <option value='regularPrice_desc'>Price high to low</option>
-              <option value='regularPrice_asc'>Price low to hight</option>
-              <option value='createdAt_desc'>Latest</option>
-              <option value='createdAt_asc'>Oldest</option>
+              <option 
+              className='bg-[#121d1c] text-slate-100'
+              value='regularPrice_desc'>Price high to low</option>
+              <option 
+              className='bg-[#121d1c] text-slate-100'
+              value='regularPrice_asc'>Price low to hight</option>
+              <option className='bg-[#121d1c] text-slate-100'
+              
+              value='createdAt_desc'>Latest</option>
+              <option className='bg-[#121d1c] text-slate-100' value='createdAt_asc'>Oldest</option>
             </select>
           </div>
           <button className='bg-slate-700 text-white p-2 rounded-lg uppercase hover:opacity-85 text-sm '>
@@ -244,19 +250,19 @@ export default function Search() {
           SHOWMORE- TRIGGER SHOW-MORE FUNCTION
       */}
 
-      <div className='result flex-1 pt-2'>
-        {/* <h1 className='text-xl font-semibold pl-7  text-slate-500 mt-8'>
+      <div className='result flex-1 mt-0 mx-auto  justify-start flex flex-col min-h-screen align-top '>
+        <h1 className='text-2xl font-semibold text-slate-100 text-left flex '>
           Listing results:
-        </h1> */}
-        <div className='p-3 pt-6 flex flex-wrap gap-4 '>
+        </h1>
+        <div className='pt-3 my-0 flex flex-wrap gap-3 '>
           {!loading && listings.length === 0 && (
             <p className='text-xl text-slate-700'>No listing found!</p>
           )}
-          {loading && (
-            <p className='text-xl text-slate-700 text-center w-full '>
-              Loading...
-            </p>
-          )}
+        {loading && (
+          <div className="text-center flex items-center justify-center mx-auto py-32">
+            <div className="w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
+          </div>
+        )}
 
           {!loading &&
             listings &&
@@ -275,7 +281,11 @@ export default function Search() {
             </button>
           )}
         </div>
+        <div>
+                <Footer/>
+              </div>
       </div>
+ 
     </div>
   );
 }

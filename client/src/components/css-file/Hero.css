@@ -1,49 +1,28 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  font-family: "Poppins", sans-serif;
-  scroll-behavior: smooth;
-} */
-  
-  /* .orange-circle {
-    height: 4rem;
-    width: 4rem;
-    background: var(--orange-gradient);
-    border-radius: 999px;
-    position: absolute;
-    right: 28%;
-    top: -10%;
-    z-index: -1;
-  } */
-  
-  /* right side */
-  
-  .image-container {
+
+.image-container {
     width: 24rem;
     height: 28rem;
     overflow: hidden;
     border-radius: 15rem 15rem 0 0;
     border: 8px solid rgba(167, 175, 158, 0.664);
   }
-
-  
+  @media (max-width: 640px) {
+  .container{
+    margin-top: 3rem;
+  }  }
   .image-container > img{
     width:100%;
     height: 100%;
   }
-  
   /* mobile screens */
-  @media (max-width: 640px) { /* Tailwind's sm breakpoint */
+  @media (max-width: 640px) { 
     .image-container {
-      width: 20rem;  /* Adjusted width for small screens */
-      height: 24rem; /* Adjusted height for small screens */
+      width: 20rem;  
+      height: 24rem; }
+.h1{
+      font-size: 32px; 
     }
-    .h1{
-      font-size: 32px;
-      
-    }
-
-    .lime {
+.lime {
       margin-top: 12px;
       margin-left: 9px;
       font-size: larger;
@@ -58,30 +37,17 @@
       display: flex;
       justify-content: left;
       align-items: start;
-      margin-left: 24px;
-
-    }
-
-  }
+      margin-left: 24px; } }
   
   /* Medium screens (e.g., tablets) */
-  @media (min-width: 641px) and (max-width: 768px) { /* Tailwind's md breakpoint */
+  @media (min-width: 641px) and (max-width: 768px) { 
     .image-container {
       width: 20rem;  /* Adjusted width for medium screens */
-      height: 24rem; /* Adjusted height for medium screens */
-      
+      height: 24rem; /* Adjusted height for medium screens */  
     }
-
     .h1{
-      font-size: 32px;
-      
-    }
-  }
+      font-size: 32px;    } }
 
-  @media (min-width: 768px) and (max-width: 1024px) { /* Tailwind's md breakpoint */
-
-
+  @media (min-width: 768px) and (max-width: 1024px) { 
     .h1{
-      font-size: 32px;
-    }
-  }
+      font-size: 32px; } }

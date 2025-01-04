@@ -15,7 +15,6 @@ import Sale from './components/Sale'
 import MyListings from './pages/MyListings';
 import "./App.css";
 
-
 export default function App() {
   return (
     <BrowserRouter>

@@ -2,7 +2,7 @@ import { Link} from 'react-router-dom';
 
 export default function ProfileHeader() {
   return ( 
-    <div className='sticky shadow-slate-200 bg-black shadow-lg text-white w-full top-0 z-50'>
+    <div className='sticky bg-black shadow-lg text-white w-full top-0 z-50'>
         <div  className='flex justify-between items-center max-w-6xl  mx-auto lg:ml-32 p-3'>
         <ul className='flex gap-2 items-center justify-center'>
           <Link to='/my-listings'>

@@ -58,57 +58,65 @@ export default function MyListings() {
 
   return (
     <div>
-      <ProfileHeader className=' ' />
+      <ProfileHeader className='text-slate-200 ' />
       <div className="flex flex-col p-3 pt-4 px-3 max-w-6xl mx-auto ">
         {loading ? (
-          <div className="flex justify-center items-center">
-            <p>Loading...</p>
+            <div className="text-center py-8">
+            <div className="w-8 h-8 border-4 border-yellow-400 border-t-transparent rounded-full animate-spin mx-auto"></div>
           </div>
         ) : userListings && userListings.length > 0 ? (
           <div className='flex flex-col gap-3'>
-            {userListings.map((listing) => (
+          {userListings.map((listing) => (
+            <Link
+              key={listing._id}
+              to={`/listing/${listing._id}`}
+              className="block"
+            >
               <div
-                key={listing._id}
-                className='border rounded-lg p-3 flex justify-between items-center shadow-lg gap-4'
+                className='border rounded-lg p-3 flex justify-between items-center shadow-lg gap-4 hover:opacity-50 transition-opacity duration-400 cursor-pointer'
               >
-                <Link to={`/listing/${listing._id}`}>
-                  <img
-                    src={listing.imageUrls[0]}
-                    alt='listing cover'
-                    className='h-28 w-36 object-cover'
-                  />
-                </Link>
-                <Link
-                  className='text-slate-700 font-semibold hover:underline truncate flex-1'
-                  to={`/listing/${listing._id}`}
-                >
-                  <p>{listing.name}</p>
-                </Link>
-
-                <div className='flex flex-col item-center'>
+                <img
+                  src={listing.imageUrls[0]}
+                  alt='listing cover'
+                  className='h-28 w-36 object-cover'
+                />
+                <p className='font-semibold text-slate-200 hover:underline truncate flex-1'>
+                  {listing.name}
+                </p>
+                <div className='flex flex-col items-center'>
                   <button
-                    onClick={() => handleListingDelete(listing._id)}
-                    className='text-red-700 hover:underline uppercase'
+                    onClick={(e) => {
+                      e.stopPropagation(); // Prevent the event from propagating to the Link
+                      handleListingDelete(listing._id);
+                    }}
+                    className='text-red-400 font-semibold hover:underline uppercase'
                   >
                     Delete
                   </button>
-                  <Link to={`/update-listing/${listing._id}`}>
-                    <button className='text-green-700 hover:underline uppercase'>Edit</button>
+                  <Link
+                    to={`/update-listing/${listing._id}`}
+                    onClick={(e) => e.stopPropagation()} // Prevent navigation by the parent Link
+                  >
+                    <button className='text-green-400 font-semibold hover:underline uppercase'>
+                      Edit
+                    </button>
                   </Link>
                 </div>
               </div>
-            ))}
+            </Link>
+          ))}
+
           </div>
         ) : (
           <div className="flex flex-col float-start gap-6">
-            <p className='text-slate-700 mt-5 text-lg'>
+            <p className='text-slate-200 mt-5 text-lg'>
               You haven&apos;t listed any property! Tap below to get started.
             </p>
           </div>
         )}
         <div className="flex px-auto mx-auto my-3">
           <Link
-            className='flex px-auto ml-0 justify-center mx-auto border border-2 border-t-0 border-l-0 border-r-0 hover:border-b-slate-700 text-black font-medium p-3 uppercase text-center hover:opacity-95'
+            className='flex px-auto ml-0 justify-center mx-auto border border-2 border-t-0 border-l-0 border-r-0 hover:border-b-opacity-50 text-slate-200 font-medium p-3 uppercase text-center hover:opacity-55'
             to={'/create-listing'}
           >
             Create New Listing

@@ -9,9 +9,9 @@ export default function SubHeader() {
   const [copied, setCopied] = useState(false);
 
   return ( 
-    <subheader className=' sticky w-full top-0 z-50 bg-slate-300'>
+    <subheader className=' sticky w-full top-0 z-50 text-slate-200'>
         <div  className='flex justify-between items-center max-w-6xl lg:mx-36 p-3 '>
-      <Link to = '/search' className='hover:text-slate-500'>
+      <Link to = '/search' className='hover:underline hover:text-slate-200'>
           <span className='items-center gap-2 flex flex-wrap '>
           <IoIosArrowBack /> 
          

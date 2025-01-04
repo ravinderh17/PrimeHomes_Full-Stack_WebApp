@@ -52,19 +52,18 @@ export default function Listing() {
 
   return (
     <main>
-      <SubHeader className=''/>
+      <SubHeader className='text-slate-100 max-w-7xl '/>
       {loading && <p className='text-center my-7 text-2xl'>Loading...</p>}
       {error && (
         <p className='text-center my-7 text-2xl'>Something went wrong!</p>
       )}
       {listing && !loading && !error && (
-        <div>
-          <Swiper navigation className='lg:mx-36'>
+        <div className='max-w-7xl justify-center flex flex-col mx-auto'>
+          <Swiper navigation className='lg:mx-36 text-slate-100'>
           {Array.isArray(listing.imageUrls) && listing.imageUrls.map((url) => (
           <SwiperSlide key={url}>
             <div
-              className='flex items-center justify-center mx-4 lg:mx-auto'
-
+              className='flex items-center justify-center mx-4 lg:mx-auto '
               // style={{ h-[60vh] w-[900px] 
               //   background: `url(${url}) center no-repeat`, display: `flex`,
               //   alignItems: `center`,
@@ -82,7 +81,7 @@ export default function Listing() {
           </Swiper>
  
           {/* < /> */}
-          <div className='flex lg:mx-56 lg:px-4 flex-col max-w-6xl mx-auto my-7 gap-4  px-16 sm:mx-1 '>
+          <div className='flex lg:mx-56 lg:px-4 flex-col max-w-6xl mx-auto my-7 text-slate-100 gap-4  px-16 sm:mx-1 '>
             <p className='text-2xl font-semibold'>
               {listing.name} - ${' '}
               {listing.offer
@@ -90,7 +89,7 @@ export default function Listing() {
                 : listing.regularPrice.toLocaleString('en-US')}
               {listing.type === 'rent' && ' / month'}
             </p>
-            <p className='flex items-center mt-6 gap-2 text-slate-600  text-sm'>
+            <p className='flex items-center mt-6 gap-2  text-sm'>
               <FaMapMarkerAlt className='text-green-700' />
               {listing.address}
             </p>
@@ -104,7 +103,7 @@ export default function Listing() {
                 </p>
               )}
             </div>
-            <p className='text-slate-800 text-justify'>
+            <p className='text-justify'>
               {/* <span className='font-semibold text-black'>Description - </span> */}
               {listing.description}
             </p>
