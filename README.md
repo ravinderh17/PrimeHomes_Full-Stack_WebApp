@@ -4,6 +4,8 @@
 
 PrimeHomes is a comprehensive real estate web application designed to provide users with a seamless property searching and management experience. The platform includes dynamic search functionality, secure authentication, real-time messaging, and robust profile and listing management features.
 
+![Untitled design](https://github.com/user-attachments/assets/78022345-3c7a-4e95-82ca-16a39c5ce001)
+
 ### Features
 
 1. **Advanced Search Functionality**:
