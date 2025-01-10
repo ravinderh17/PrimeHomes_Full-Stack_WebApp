@@ -19,7 +19,7 @@ export default function ListingItem({ listing }) {
           <img
             src={imageUrl}
             alt="listing cover"
-            className="w-[300px] h-[280px]  object-cover "
+            className="md:w-[300px] lg:w-[300px] h-[280px] object-cover w-[500px]"
           />
         </LazyLoad>
         <div className="absolute bottom-0 left-0 w-full p-3  bg-slate-800 bg-opacity-50 text-white">

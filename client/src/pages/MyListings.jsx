@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ProfileHeader from "../components/ProfileHeader";
+import { IoIosArrowBack } from "react-icons/io";
+
 
 export default function MyListings() {
   const { currentUser } = useSelector((state) => state.user);
@@ -58,6 +60,14 @@ export default function MyListings() {
 
   return (
     <div>
+      <div className="max-w-6xl mt-4 px-3 mx-auto">
+          <Link to = '/profile' className='hover:underline text-slate-200'>
+                  <span className='items-center gap-2 flex flex-wrap font-medium '>
+                     <IoIosArrowBack /> 
+                  Back to Profile
+                  </span>
+              </Link>
+      </div>
       <ProfileHeader className='text-slate-200 ' />
       <div className="flex flex-col p-3 pt-4 px-3 max-w-6xl mx-auto ">
         {loading ? (

@@ -25,19 +25,19 @@ export default function Sale() {
             <div className='text-slate-100'>
             <h2 className='relative text-3xl font-semibold mx-auto  mt-6 mb-12'>
                 <span className='relative inline-block'>
-                  <span className='border-b-8 border-slate-600 pb-1 '>
+                  <span className='border-b-8 border-slate-400 pb-1 font-semibold '>
                     Residentials F
                   </span>
                   <span className='absolute bottom-0 left-0 right-0 h-1 ' />
                 </span>
                 <span className='relative inline-block'>
-                  <span className=''>
+                  <span className='font-semibold '>
                    or Sale
                   </span>
                 </span>
                 </h2>
               </div>
-            <div className='flex flex-wrap sm:gap-2 lg:gap-8 lg:mx-24 sm:mx-1 sm:mb-4 px-auto'>
+            <div className='flex flex-wrap sm:gap-8 lg:gap-8 lg:mx-24 sm:mx-24  px-auto'>
               {saleListings.map((listing) => (
                 <ListingItem listing={listing} key={listing._id} />
               ))}

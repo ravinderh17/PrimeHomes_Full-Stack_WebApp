@@ -68,7 +68,7 @@ export default function Home() {
         {offerListings.length > 0 && (
           <div>
             <div className=' mb-4 flex flex-col  items-center  text-slate-200'>
-              <h2 className='relative text-3xl font-semibold mt-8 mb-6'>
+              <h2 className='block sm:hidden relative text-3xl font-semibold mt-8 mb-6'>
                 <span className='relative inline-block'>
                   <span className='border-b-8 border-slate-400 pb-1 font-normal text-4xl'>Featured D</span>
                   <span className='absolute bottom-0 left-0 right-0 h-1' />
@@ -76,6 +76,9 @@ export default function Home() {
                 <span className='relative inline-block'>
                   <span className=' font-normal text-4xl'>eals</span>
                 </span>
+              </h2>
+              <h2 className='hidden sm:block relative text-4xl font-semibold mt-8 mb-6'>
+                Featured Deals
               </h2>
             </div>
            

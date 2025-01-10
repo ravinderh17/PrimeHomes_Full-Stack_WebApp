@@ -1,10 +1,10 @@
 
 export default function WhyChooseUs() {
   return (
-        <section className="text-slate-100 pb-16 ">
+        <section className="text-slate-200 pb-16 ">
           <div className="container mx-auto px-4 text-center flex flex-col items-center">
             {/* Section Header */}
-            <h2 className='text-4xl font-normal  mb-6'>
+            <h2 className='block sm:hidden text-4xl font-medium  mb-6'>
                 <span className='relative inline-block'>
                   <span className='border-b-8 border-slate-400 pb-1 font-normal text-4xl'>Why C</span>
                   <span className='absolute bottom-0 left-0 right-0 h-1' />
@@ -13,12 +13,15 @@ export default function WhyChooseUs() {
                   <span className=' font-normal text-4xl'>hoose Us</span>
                 </span>
               </h2>
+              <h2 className='hidden sm:block text-4xl font-semibold  mb-6'>
+               Why Choose Us
+              </h2>
        
-            <p className="mb-12 text-lg max-w-xl">
+            <p className="mb-12 mt-3 text-lg max-w-xl font-normal">
               Discover what makes us stand out from the competition. Your dream property journey begins here.
             </p>
             {/* Feature Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mx-auto sm:mx-4">
               {/* Card 1 */}
               <div className="bg-transparent shadow-lg rounded-lg p-6 border border-slate-500 hover:scale-105 transition transform duration-300 cursor-pointer">
                 <div className="flex justify-center items-center bg-blue-200 w-16 h-16 rounded-full mx-auto mb-4">
